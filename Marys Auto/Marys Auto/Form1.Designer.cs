@@ -1,7 +1,7 @@
 ﻿
 namespace Marys_Auto
 {
-    partial class Form1
+    partial class mainUserInputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,12 +43,13 @@ namespace Marys_Auto
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.yearBox = new System.Windows.Forms.ComboBox();
+            this.modelBox = new System.Windows.Forms.ComboBox();
+            this.makeBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.vinBox = new System.Windows.Forms.TextBox();
-            this.modelBox = new System.Windows.Forms.TextBox();
-            this.trimBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.makeBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -56,11 +57,10 @@ namespace Marys_Auto
             this.clearButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.estimatedPriceBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.actualPriceBox = new System.Windows.Forms.TextBox();
+            this.trimBox = new System.Windows.Forms.ComboBox();
             this.customerInfoBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,7 @@ namespace Marys_Auto
             this.phoneNumberBox.Location = new System.Drawing.Point(137, 180);
             this.phoneNumberBox.Name = "phoneNumberBox";
             this.phoneNumberBox.Size = new System.Drawing.Size(107, 22);
-            this.phoneNumberBox.TabIndex = 12;
+            this.phoneNumberBox.TabIndex = 6;
             // 
             // label11
             // 
@@ -114,21 +114,21 @@ namespace Marys_Auto
             this.stateBox.Location = new System.Drawing.Point(137, 118);
             this.stateBox.Name = "stateBox";
             this.stateBox.Size = new System.Drawing.Size(107, 22);
-            this.stateBox.TabIndex = 10;
+            this.stateBox.TabIndex = 4;
             // 
             // streetAdressBox
             // 
             this.streetAdressBox.Location = new System.Drawing.Point(137, 152);
             this.streetAdressBox.Name = "streetAdressBox";
             this.streetAdressBox.Size = new System.Drawing.Size(107, 22);
-            this.streetAdressBox.TabIndex = 6;
+            this.streetAdressBox.TabIndex = 5;
             // 
             // lastNameBox
             // 
             this.lastNameBox.Location = new System.Drawing.Point(137, 54);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(107, 22);
-            this.lastNameBox.TabIndex = 4;
+            this.lastNameBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -144,7 +144,7 @@ namespace Marys_Auto
             this.cityBox.Location = new System.Drawing.Point(137, 86);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(107, 22);
-            this.cityBox.TabIndex = 9;
+            this.cityBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -184,14 +184,14 @@ namespace Marys_Auto
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.trimBox);
+            this.groupBox1.Controls.Add(this.yearBox);
+            this.groupBox1.Controls.Add(this.modelBox);
+            this.groupBox1.Controls.Add(this.makeBox);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.vinBox);
-            this.groupBox1.Controls.Add(this.modelBox);
-            this.groupBox1.Controls.Add(this.trimBox);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.makeBox);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Location = new System.Drawing.Point(297, 12);
@@ -201,26 +201,117 @@ namespace Marys_Auto
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle Info";
             // 
-            // vinBox
+            // yearBox
             // 
-            this.vinBox.Location = new System.Drawing.Point(137, 118);
-            this.vinBox.Name = "vinBox";
-            this.vinBox.Size = new System.Drawing.Size(107, 22);
-            this.vinBox.TabIndex = 10;
+            this.yearBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.yearBox.FormattingEnabled = true;
+            this.yearBox.Items.AddRange(new object[] {
+            "1970",
+            "1971",
+            "1972",
+            "1973",
+            "1974",
+            "1975",
+            "1976",
+            "1977",
+            "1978",
+            "1979",
+            "1980",
+            "1981",
+            "1982",
+            "1983",
+            "1984",
+            "1985",
+            "1986",
+            "1987",
+            "1988",
+            "1989",
+            "1990",
+            "1991",
+            "1992",
+            "1993",
+            "1994",
+            "1995",
+            "1996",
+            "1997",
+            "1998",
+            "1999",
+            "2000",
+            "2001",
+            "2002",
+            "2003",
+            "2004",
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            ""});
+            this.yearBox.Location = new System.Drawing.Point(87, 152);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(157, 24);
+            this.yearBox.TabIndex = 19;
             // 
             // modelBox
             // 
-            this.modelBox.Location = new System.Drawing.Point(137, 54);
+            this.modelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.modelBox.FormattingEnabled = true;
+            this.modelBox.Items.AddRange(new object[] {
+            "Model 1 Example",
+            "Model 2 Example",
+            "Model 3 Example",
+            "Model 4 Example",
+            "Model 5 Example",
+            "Etc edit later"});
+            this.modelBox.Location = new System.Drawing.Point(87, 56);
             this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(107, 22);
-            this.modelBox.TabIndex = 4;
+            this.modelBox.Size = new System.Drawing.Size(157, 24);
+            this.modelBox.TabIndex = 18;
             // 
-            // trimBox
+            // makeBox
             // 
-            this.trimBox.Location = new System.Drawing.Point(137, 86);
-            this.trimBox.Name = "trimBox";
-            this.trimBox.Size = new System.Drawing.Size(107, 22);
-            this.trimBox.TabIndex = 9;
+            this.makeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.makeBox.FormattingEnabled = true;
+            this.makeBox.Items.AddRange(new object[] {
+            "Make 1 Example",
+            "Make 2 Example",
+            "Make 3 Example",
+            "Make 4 Example",
+            "Make 5 Example",
+            "Etc edit later"});
+            this.makeBox.Location = new System.Drawing.Point(87, 21);
+            this.makeBox.Name = "makeBox";
+            this.makeBox.Size = new System.Drawing.Size(157, 24);
+            this.makeBox.TabIndex = 17;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(26, 152);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 17);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Year";
+            // 
+            // vinBox
+            // 
+            this.vinBox.Location = new System.Drawing.Point(87, 118);
+            this.vinBox.Name = "vinBox";
+            this.vinBox.Size = new System.Drawing.Size(157, 22);
+            this.vinBox.TabIndex = 4;
             // 
             // label7
             // 
@@ -239,13 +330,6 @@ namespace Marys_Auto
             this.label8.Size = new System.Drawing.Size(30, 17);
             this.label8.TabIndex = 8;
             this.label8.Text = "VIN";
-            // 
-            // makeBox
-            // 
-            this.makeBox.Location = new System.Drawing.Point(137, 26);
-            this.makeBox.Name = "makeBox";
-            this.makeBox.Size = new System.Drawing.Size(107, 22);
-            this.makeBox.TabIndex = 1;
             // 
             // label9
             // 
@@ -286,18 +370,20 @@ namespace Marys_Auto
             this.clearButton.Location = new System.Drawing.Point(210, 419);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 13;
+            this.clearButton.TabIndex = 15;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // submitButton
             // 
             this.submitButton.Location = new System.Drawing.Point(297, 419);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 14;
+            this.submitButton.TabIndex = 16;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // label15
             // 
@@ -308,15 +394,15 @@ namespace Marys_Auto
             this.label15.TabIndex = 0;
             this.label15.Text = "Estimated Price";
             // 
-            // textBox7
+            // estimatedPriceBox
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox7.Location = new System.Drawing.Point(300, 321);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(84, 22);
-            this.textBox7.TabIndex = 13;
-            this.textBox7.Text = "$0.00";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.estimatedPriceBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.estimatedPriceBox.Location = new System.Drawing.Point(300, 321);
+            this.estimatedPriceBox.Name = "estimatedPriceBox";
+            this.estimatedPriceBox.Size = new System.Drawing.Size(84, 22);
+            this.estimatedPriceBox.TabIndex = 13;
+            this.estimatedPriceBox.Text = "$0.00";
+            this.estimatedPriceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -327,40 +413,40 @@ namespace Marys_Auto
             this.label6.TabIndex = 15;
             this.label6.Text = "Actual Price";
             // 
-            // textBox1
+            // actualPriceBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(300, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(84, 22);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "$0.00";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.actualPriceBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.actualPriceBox.Location = new System.Drawing.Point(300, 352);
+            this.actualPriceBox.Name = "actualPriceBox";
+            this.actualPriceBox.Size = new System.Drawing.Size(84, 22);
+            this.actualPriceBox.TabIndex = 14;
+            this.actualPriceBox.Text = "$0.00";
+            this.actualPriceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label12
+            // trimBox
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 152);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 17);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Year";
+            this.trimBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.trimBox.FormattingEnabled = true;
+            this.trimBox.Items.AddRange(new object[] {
+            "Trim 1 Example",
+            "Trim 2 Example",
+            "Trim 3 Example",
+            "Trim 4 Example",
+            "Trim 5 Example",
+            "Etc edit later"});
+            this.trimBox.Location = new System.Drawing.Point(87, 88);
+            this.trimBox.Name = "trimBox";
+            this.trimBox.Size = new System.Drawing.Size(157, 24);
+            this.trimBox.TabIndex = 20;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(137, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 22);
-            this.textBox2.TabIndex = 12;
-            // 
-            // Form1
+            // mainUserInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 454);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.actualPriceBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.estimatedPriceBox);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.clearButton);
@@ -368,7 +454,7 @@ namespace Marys_Auto
             this.Controls.Add(this.label17);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.customerInfoBox);
-            this.Name = "Form1";
+            this.Name = "mainUserInputForm";
             this.Text = "Mary\'s Auto";
             this.customerInfoBox.ResumeLayout(false);
             this.customerInfoBox.PerformLayout();
@@ -395,11 +481,8 @@ namespace Marys_Auto
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox vinBox;
-        private System.Windows.Forms.TextBox modelBox;
-        private System.Windows.Forms.TextBox trimBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox makeBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;
@@ -407,11 +490,14 @@ namespace Marys_Auto
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox estimatedPriceBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox actualPriceBox;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox makeBox;
+        private System.Windows.Forms.ComboBox modelBox;
+        private System.Windows.Forms.ComboBox yearBox;
+        private System.Windows.Forms.ComboBox trimBox;
     }
 }
 
