@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MarysAutoShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customer_Vehicles">
+          <Key>
+            <PropertyRef Name="CustVehicle_ID" />
+          </Key>
+          <Property Name="CustVehicle_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Customer_ID" Type="varchar" MaxLength="8" />
+          <Property Name="Vehicle_ID" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerLastName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerStreetAddress" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerCity" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerState" Type="varchar" MaxLength="2" />
+          <Property Name="CustomerZipCode" Type="varchar" MaxLength="5" />
+          <Property Name="CustomerPhoneAreaCode" Type="varchar" MaxLength="3" />
+          <Property Name="CustomerPhoneNumber" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="Employee_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EmployeeFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeLastName" Type="varchar" MaxLength="50" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+          <Property Name="HourlyWage" Type="money" />
+          <Property Name="Experience" Type="int" />
+        </EntityType>
+        <EntityType Name="Estimate">
+          <Key>
+            <PropertyRef Name="Estimate_ID" />
+          </Key>
+          <Property Name="Estimate_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="CustVehicle_ID" Type="varchar" MaxLength="8" />
+          <Property Name="Assessment_ID" Type="varchar" MaxLength="8" />
+          <Property Name="PriceEstimate" Type="money" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="FinalPrice" Type="money" />
+          <Property Name="WorkDoneDescription" Type="varchar" MaxLength="50" />
+          <Property Name="Service_ID" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Service_ID" />
+          </Key>
+          <Property Name="Service_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="ServiceName" Type="varchar" MaxLength="50" />
+          <Property Name="Estimate_ID" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="Vehicle_ID" />
+          </Key>
+          <Property Name="Vehicle_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleModel" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleTrim" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleYear" Type="varchar" MaxLength="4" />
+          <Property Name="VIN" Type="varchar" MaxLength="17" />
+        </EntityType>
+        <EntityType Name="Work_Assessment">
+          <Key>
+            <PropertyRef Name="Assessment_ID" />
+          </Key>
+          <Property Name="Assessment_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Order_ID" Type="varchar" MaxLength="8" />
+          <Property Name="Employee_ID" Type="varchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="Work_Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="OrderDescription" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <Association Name="FK__Customer___Custo__33D4B598">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Customer_Vehicles">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer___Vehic__34C8D9D1">
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicles">
+              <PropertyRef Name="Vehicle_ID" />
+            </Principal>
+            <Dependent Role="Customer_Vehicles">
+              <PropertyRef Name="Vehicle_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estimate__Assess__35BCFE0A">
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Assessment">
+              <PropertyRef Name="Assessment_ID" />
+            </Principal>
+            <Dependent Role="Estimate">
+              <PropertyRef Name="Assessment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estimate__CustVe__36B12243">
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Vehicles">
+              <PropertyRef Name="CustVehicle_ID" />
+            </Principal>
+            <Dependent Role="Estimate">
+              <PropertyRef Name="CustVehicle_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__Service__37A5467C">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Service_ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="Service_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__Estimat__38996AB5">
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estimate">
+              <PropertyRef Name="Estimate_ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="Estimate_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Asse__Emplo__398D8EEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Work_Assessment">
+              <PropertyRef Name="Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Asse__Order__3A81B327">
+          <End Role="Work_Order" Type="Self.Work_Order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Work_Assessment">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarysAutoShopDBModelStoreContainer">
+          <EntitySet Name="Customer_Vehicles" EntityType="Self.Customer_Vehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estimate" EntityType="Self.Estimate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work_Assessment" EntityType="Self.Work_Assessment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work_Order" EntityType="Self.Work_Order" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Customer___Custo__33D4B598" Association="Self.FK__Customer___Custo__33D4B598">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer___Vehic__34C8D9D1" Association="Self.FK__Customer___Vehic__34C8D9D1">
+            <End Role="Vehicles" EntitySet="Vehicles" />
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estimate__Assess__35BCFE0A" Association="Self.FK__Estimate__Assess__35BCFE0A">
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+            <End Role="Estimate" EntitySet="Estimate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estimate__CustVe__36B12243" Association="Self.FK__Estimate__CustVe__36B12243">
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+            <End Role="Estimate" EntitySet="Estimate" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__Service__37A5467C" Association="Self.FK__Invoice__Service__37A5467C">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Estimat__38996AB5" Association="Self.FK__Service__Estimat__38996AB5">
+            <End Role="Estimate" EntitySet="Estimate" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Asse__Emplo__398D8EEE" Association="Self.FK__Work_Asse__Emplo__398D8EEE">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Asse__Order__3A81B327" Association="Self.FK__Work_Asse__Order__3A81B327">
+            <End Role="Work_Order" EntitySet="Work_Order" />
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarysAutoShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer_Vehicles">
+          <Key>
+            <PropertyRef Name="CustVehicle_ID" />
+          </Key>
+          <Property Name="CustVehicle_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Customer_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Customer___Custo__33D4B598" FromRole="Customer_Vehicles" ToRole="Customers" />
+          <NavigationProperty Name="Vehicle" Relationship="Self.FK__Customer___Vehic__34C8D9D1" FromRole="Customer_Vehicles" ToRole="Vehicles" />
+          <NavigationProperty Name="Estimates" Relationship="Self.FK__Estimate__CustVe__36B12243" FromRole="Customer_Vehicles" ToRole="Estimate" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerStreetAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCity" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPhoneAreaCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPhoneNumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer_Vehicles" Relationship="Self.FK__Customer___Custo__33D4B598" FromRole="Customers" ToRole="Customer_Vehicles" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="Employee_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HourlyWage" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Experience" Type="Int32" />
+          <NavigationProperty Name="Work_Assessment" Relationship="Self.FK__Work_Asse__Emplo__398D8EEE" FromRole="Employee" ToRole="Work_Assessment" />
+        </EntityType>
+        <EntityType Name="Estimate">
+          <Key>
+            <PropertyRef Name="Estimate_ID" />
+          </Key>
+          <Property Name="Estimate_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustVehicle_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Assessment_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="PriceEstimate" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Customer_Vehicles" Relationship="Self.FK__Estimate__CustVe__36B12243" FromRole="Estimate" ToRole="Customer_Vehicles" />
+          <NavigationProperty Name="Work_Assessment" Relationship="Self.FK__Estimate__Assess__35BCFE0A" FromRole="Estimate" ToRole="Work_Assessment" />
+          <NavigationProperty Name="Services" Relationship="Self.FK__Service__Estimat__38996AB5" FromRole="Estimate" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FinalPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="WorkDoneDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Service_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__Invoice__Service__37A5467C" FromRole="Invoice" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Service_ID" />
+          </Key>
+          <Property Name="Service_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estimate_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Estimate" Relationship="Self.FK__Service__Estimat__38996AB5" FromRole="Service" ToRole="Estimate" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__Service__37A5467C" FromRole="Service" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Vehicle_ID" />
+          </Key>
+          <Property Name="Vehicle_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VehicleMake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleTrim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleYear" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer_Vehicles" Relationship="Self.FK__Customer___Vehic__34C8D9D1" FromRole="Vehicles" ToRole="Customer_Vehicles" />
+        </EntityType>
+        <EntityType Name="Work_Assessment">
+          <Key>
+            <PropertyRef Name="Assessment_ID" />
+          </Key>
+          <Property Name="Assessment_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Order_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="Employee_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Work_Asse__Emplo__398D8EEE" FromRole="Work_Assessment" ToRole="Employee" />
+          <NavigationProperty Name="Estimates" Relationship="Self.FK__Estimate__Assess__35BCFE0A" FromRole="Work_Assessment" ToRole="Estimate" />
+          <NavigationProperty Name="Work_Order" Relationship="Self.FK__Work_Asse__Order__3A81B327" FromRole="Work_Assessment" ToRole="Work_Order" />
+        </EntityType>
+        <EntityType Name="Work_Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Work_Assessment" Relationship="Self.FK__Work_Asse__Order__3A81B327" FromRole="Work_Order" ToRole="Work_Assessment" />
+        </EntityType>
+        <Association Name="FK__Customer___Custo__33D4B598">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Customer_Vehicles">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Customer___Vehic__34C8D9D1">
+          <End Role="Vehicles" Type="Self.Vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicles">
+              <PropertyRef Name="Vehicle_ID" />
+            </Principal>
+            <Dependent Role="Customer_Vehicles">
+              <PropertyRef Name="Vehicle_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estimate__CustVe__36B12243">
+          <End Role="Customer_Vehicles" Type="Self.Customer_Vehicles" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Vehicles">
+              <PropertyRef Name="CustVehicle_ID" />
+            </Principal>
+            <Dependent Role="Estimate">
+              <PropertyRef Name="CustVehicle_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Asse__Emplo__398D8EEE">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Work_Assessment">
+              <PropertyRef Name="Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Estimate__Assess__35BCFE0A">
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Assessment">
+              <PropertyRef Name="Assessment_ID" />
+            </Principal>
+            <Dependent Role="Estimate">
+              <PropertyRef Name="Assessment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Service__Estimat__38996AB5">
+          <End Role="Estimate" Type="Self.Estimate" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estimate">
+              <PropertyRef Name="Estimate_ID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="Estimate_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Invoice__Service__37A5467C">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Service_ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="Service_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Asse__Order__3A81B327">
+          <End Role="Work_Order" Type="Self.Work_Order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Work_Assessment" Type="Self.Work_Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Work_Assessment">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarysAutoShopDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customer_Vehicles" EntityType="Self.Customer_Vehicles" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Estimates" EntityType="Self.Estimate" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+          <EntitySet Name="Work_Assessment" EntityType="Self.Work_Assessment" />
+          <EntitySet Name="Work_Order" EntityType="Self.Work_Order" />
+          <AssociationSet Name="FK__Customer___Custo__33D4B598" Association="Self.FK__Customer___Custo__33D4B598">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Customer___Vehic__34C8D9D1" Association="Self.FK__Customer___Vehic__34C8D9D1">
+            <End Role="Vehicles" EntitySet="Vehicles" />
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estimate__CustVe__36B12243" Association="Self.FK__Estimate__CustVe__36B12243">
+            <End Role="Customer_Vehicles" EntitySet="Customer_Vehicles" />
+            <End Role="Estimate" EntitySet="Estimates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Asse__Emplo__398D8EEE" Association="Self.FK__Work_Asse__Emplo__398D8EEE">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Estimate__Assess__35BCFE0A" Association="Self.FK__Estimate__Assess__35BCFE0A">
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+            <End Role="Estimate" EntitySet="Estimates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Service__Estimat__38996AB5" Association="Self.FK__Service__Estimat__38996AB5">
+            <End Role="Estimate" EntitySet="Estimates" />
+            <End Role="Service" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Invoice__Service__37A5467C" Association="Self.FK__Invoice__Service__37A5467C">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Asse__Order__3A81B327" Association="Self.FK__Work_Asse__Order__3A81B327">
+            <End Role="Work_Order" EntitySet="Work_Order" />
+            <End Role="Work_Assessment" EntitySet="Work_Assessment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarysAutoShopDBModelStoreContainer" CdmEntityContainer="MarysAutoShopDBEntities">
+          <EntitySetMapping Name="Customer_Vehicles">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Customer_Vehicles">
+              <MappingFragment StoreEntitySet="Customer_Vehicles">
+                <ScalarProperty Name="CustVehicle_ID" ColumnName="CustVehicle_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+                <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+                <ScalarProperty Name="CustomerStreetAddress" ColumnName="CustomerStreetAddress" />
+                <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+                <ScalarProperty Name="CustomerState" ColumnName="CustomerState" />
+                <ScalarProperty Name="CustomerZipCode" ColumnName="CustomerZipCode" />
+                <ScalarProperty Name="CustomerPhoneAreaCode" ColumnName="CustomerPhoneAreaCode" />
+                <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="HourlyWage" ColumnName="HourlyWage" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estimates">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Estimate">
+              <MappingFragment StoreEntitySet="Estimate">
+                <ScalarProperty Name="Estimate_ID" ColumnName="Estimate_ID" />
+                <ScalarProperty Name="CustVehicle_ID" ColumnName="CustVehicle_ID" />
+                <ScalarProperty Name="Assessment_ID" ColumnName="Assessment_ID" />
+                <ScalarProperty Name="PriceEstimate" ColumnName="PriceEstimate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="WorkDoneDescription" ColumnName="WorkDoneDescription" />
+                <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Estimate_ID" ColumnName="Estimate_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicles">
+                <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+                <ScalarProperty Name="VehicleTrim" ColumnName="VehicleTrim" />
+                <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work_Assessment">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Work_Assessment">
+              <MappingFragment StoreEntitySet="Work_Assessment">
+                <ScalarProperty Name="Assessment_ID" ColumnName="Assessment_ID" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work_Order">
+            <EntityTypeMapping TypeName="MarysAutoShopDBModel.Work_Order">
+              <MappingFragment StoreEntitySet="Work_Order">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="OrderDescription" ColumnName="OrderDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

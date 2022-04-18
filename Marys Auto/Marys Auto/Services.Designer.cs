@@ -60,6 +60,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ServicesBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TechnicianBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.customerInfoBox.SuspendLayout();
             this.SuspendLayout();
@@ -449,7 +451,7 @@
             "Air Conditioning Service",
             "Electrical Systems Service",
             "Transmission Repair"});
-            this.ServicesBox.Location = new System.Drawing.Point(195, 262);
+            this.ServicesBox.Location = new System.Drawing.Point(195, 281);
             this.ServicesBox.Name = "ServicesBox";
             this.ServicesBox.Size = new System.Drawing.Size(254, 24);
             this.ServicesBox.TabIndex = 28;
@@ -457,16 +459,39 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(85, 265);
+            this.label13.Location = new System.Drawing.Point(85, 284);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 16);
             this.label13.TabIndex = 27;
             this.label13.Text = "Services";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(85, 254);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 16);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Technician";
+            // 
+            // TechnicianBox
+            // 
+            this.TechnicianBox.FormattingEnabled = true;
+            this.TechnicianBox.Items.AddRange(new object[] {
+            "Tina Massey",
+            "Brad Peterson",
+            "Wendy Myers"});
+            this.TechnicianBox.Location = new System.Drawing.Point(195, 251);
+            this.TechnicianBox.Name = "TechnicianBox";
+            this.TechnicianBox.Size = new System.Drawing.Size(254, 24);
+            this.TechnicianBox.TabIndex = 28;
+            // 
             // Services
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TechnicianBox);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.ServicesBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.actualPriceBox);
@@ -522,5 +547,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ServicesBox;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox TechnicianBox;
     }
 }
