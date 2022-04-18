@@ -63,9 +63,9 @@ namespace Marys_Auto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap customers1 {
+        internal static System.Drawing.Bitmap chain_wheel_tire {
             get {
-                object obj = ResourceManager.GetObject("customers1", resourceCulture);
+                object obj = ResourceManager.GetObject("chain_wheel_tire", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Marys_Auto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap customers2 {
+        internal static System.Drawing.Bitmap chain_wheel_tire1 {
             get {
-                object obj = ResourceManager.GetObject("customers2", resourceCulture);
+                object obj = ResourceManager.GetObject("chain_wheel_tire1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +83,9 @@ namespace Marys_Auto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap employees1 {
+        internal static System.Drawing.Bitmap chain_wheel_tire2 {
             get {
-                object obj = ResourceManager.GetObject("employees1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap employees2 {
-            get {
-                object obj = ResourceManager.GetObject("employees2", resourceCulture);
+                object obj = ResourceManager.GetObject("chain_wheel_tire2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,66 +126,6 @@ namespace Marys_Auto.Properties {
         internal static System.Drawing.Bitmap icons8_report_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-report-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap report1 {
-            get {
-                object obj = ResourceManager.GetObject("report1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap report2 {
-            get {
-                object obj = ResourceManager.GetObject("report2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap services {
-            get {
-                object obj = ResourceManager.GetObject("services", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap services1 {
-            get {
-                object obj = ResourceManager.GetObject("services1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap services2 {
-            get {
-                object obj = ResourceManager.GetObject("services2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap services3 {
-            get {
-                object obj = ResourceManager.GetObject("services3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

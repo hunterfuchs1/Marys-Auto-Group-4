@@ -117,36 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\services.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\services1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\services2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\customers1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\employees1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\report1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\services3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\employees2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\customers2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\report2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-maintenance-50.png" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +127,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-report-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chain_wheel_tire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chain_wheel_tire1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chain_wheel_tire2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
