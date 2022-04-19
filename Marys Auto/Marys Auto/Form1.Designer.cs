@@ -68,7 +68,7 @@ namespace Marys_Auto
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.PowderBlue;
+            this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.btnReport);
             this.panel2.Controls.Add(this.btnCustomers);
             this.panel2.Controls.Add(this.btnServices);
@@ -82,14 +82,15 @@ namespace Marys_Auto
             // btnReport
             // 
             this.btnReport.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.Image = global::Marys_Auto.Properties.Resources.icons8_report_64;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 377);
+            this.btnReport.Location = new System.Drawing.Point(0, 383);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             this.btnReport.Size = new System.Drawing.Size(258, 88);
-            this.btnReport.TabIndex = 0;
+            this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReport.UseVisualStyleBackColor = false;
@@ -98,13 +99,14 @@ namespace Marys_Auto
             // btnCustomers
             // 
             this.btnCustomers.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.Image = global::Marys_Auto.Properties.Resources.icons8_customer_64;
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 252);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 258);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(258, 88);
-            this.btnCustomers.TabIndex = 0;
+            this.btnCustomers.TabIndex = 2;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCustomers.UseVisualStyleBackColor = false;
@@ -114,6 +116,7 @@ namespace Marys_Auto
             // 
             this.btnServices.BackColor = System.Drawing.Color.Tomato;
             this.btnServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServices.Image = global::Marys_Auto.Properties.Resources.icons8_maintenance_50;
             this.btnServices.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,13 +133,14 @@ namespace Marys_Auto
             // btnEmployees
             // 
             this.btnEmployees.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmployees.Image = global::Marys_Auto.Properties.Resources.icons8_employees_64;
             this.btnEmployees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployees.Location = new System.Drawing.Point(0, 141);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(258, 88);
-            this.btnEmployees.TabIndex = 0;
+            this.btnEmployees.TabIndex = 1;
             this.btnEmployees.Text = "Employees";
             this.btnEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEmployees.UseVisualStyleBackColor = false;
