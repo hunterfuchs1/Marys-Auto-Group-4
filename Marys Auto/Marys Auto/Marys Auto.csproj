@@ -117,6 +117,12 @@
     <Compile Include="Services.Designer.cs">
       <DependentUpon>Services.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorkOrder.Designer.cs">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WorkOrder.resx">
+      <DependentUpon>WorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Models\ModelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
@@ -150,6 +159,7 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Marys_Auto.Models.Invoice.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,6 +208,8 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
       <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-briefcase-60.png" />
+    <None Include="Resources\icons8-briefcase-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

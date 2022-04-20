@@ -169,7 +169,8 @@ namespace Marys_Auto
 
             Invoice invoice = new Invoice();
             invoice.Invoice_ID = 0;
-            invoice.Date = new DateTime();
+            DateTime todaysDate = DateTime.Today;
+            invoice.Date = todaysDate;
             invoice.Vehicle_ID = vehicle.Vehicle_ID;
             invoice.Employee_ID = employee.Employee_ID;
             invoice.EstimatePrice = decimal.Parse(estimatedPriceBox.Text);
@@ -195,22 +196,9 @@ namespace Marys_Auto
             MessageBox.Show("Data Inserted", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             clear();
         }
+
+        
         public void clear()
-        {
-            //Customer Info Reset
-            firstNameBox.Text = "";
-            lastNameBox.Text = "";
-            cityBox.Text = "";
-            stateBox.Text = "";
-            streetAdressBox.Text = "";
-            txtZip.Text = "";
-            txtArea.Text = "";
-            phoneNumberBox.Text = "";
-
-            
-        }
-
-        private void clearButton_Click(object sender, EventArgs e)
         {
             //Customer Info Reset
             firstNameBox.Text = "";
@@ -231,9 +219,16 @@ namespace Marys_Auto
 
             //Issue Box Reset
             ServicesBox.SelectedIndex = -1;
-
+            TechnicianBox.SelectedIndex = -1;
             estimatedPriceBox.Text = "$0.00";
             actualPriceBox.Text = "$0.00";
+
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         private void makeBox_SelectedIndexChanged(object sender, EventArgs e)
