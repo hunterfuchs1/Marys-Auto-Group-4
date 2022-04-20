@@ -14,18 +14,8 @@ namespace Marys_Auto.Models
     
     public partial class Service
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
-        {
-            this.Invoices = new HashSet<Invoice>();
-        }
-    
-        public string Service_ID { get; set; }
+        public int Service_ID { get; set; }
         public string ServiceName { get; set; }
-        public string Estimate_ID { get; set; }
-    
-        public virtual Estimate Estimate { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
+        public int Invoice_ID { get; set; }
     }
 }

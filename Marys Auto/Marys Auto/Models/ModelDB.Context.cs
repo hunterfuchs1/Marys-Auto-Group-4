@@ -13,10 +13,10 @@ namespace Marys_Auto.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MarysAutoShopDBEntities : DbContext
+    public partial class MarysAutoDBEntities : DbContext
     {
-        public MarysAutoShopDBEntities()
-            : base("name=MarysAutoShopDBEntities")
+        public MarysAutoDBEntities()
+            : base("name=MarysAutoDBEntities")
         {
         }
     
@@ -25,14 +25,10 @@ namespace Marys_Auto.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer_Vehicles> Customer_Vehicles { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<Estimate> Estimates { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Vehicle> Vehicles { get; set; }
-        public virtual DbSet<Work_Assessment> Work_Assessment { get; set; }
-        public virtual DbSet<Work_Order> Work_Order { get; set; }
     }
 }

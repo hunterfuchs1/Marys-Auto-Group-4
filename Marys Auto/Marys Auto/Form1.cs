@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Marys_Auto;
 
 namespace Marys_Auto
 {
@@ -47,6 +48,11 @@ namespace Marys_Auto
             this.employees1.Visible = false;
             this.customers1.Visible = false;
             this.report1.Visible = true;
+        }
+
+        private void mainUserInputForm_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Marys_Auto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
-            this.Work_Assessment = new HashSet<Work_Assessment>();
+            this.Invoices = new HashSet<Invoice>();
         }
     
-        public string Employee_ID { get; set; }
+        public int Employee_ID { get; set; }
         public string EmployeeFirstName { get; set; }
         public string EmployeeLastName { get; set; }
         public string JobTitle { get; set; }
@@ -28,6 +28,6 @@ namespace Marys_Auto.Models
         public Nullable<int> Experience { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Work_Assessment> Work_Assessment { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
     }
 }
