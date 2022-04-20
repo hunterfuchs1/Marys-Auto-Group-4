@@ -187,6 +187,7 @@ namespace Marys_Auto
             this.Controls.Add(this.panel1);
             this.Name = "mainUserInputForm";
             this.Text = "Mary\'s Auto";
+            this.Load += new System.EventHandler(this.mainUserInputForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

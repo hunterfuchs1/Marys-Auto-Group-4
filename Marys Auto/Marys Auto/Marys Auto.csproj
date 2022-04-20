@@ -74,46 +74,34 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer_Vehicles.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Estimate.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Invoice.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Service.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Vehicle.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Work_Assessment.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Work_Order.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,12 +142,12 @@
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\DataModel.edmx">
+    <EntityDeploy Include="Models\ModelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\DataModel.edmx.diagram">
-      <DependentUpon>DataModel.edmx</DependentUpon>
+    <None Include="Models\ModelDB.edmx.diagram">
+      <DependentUpon>ModelDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -197,19 +185,19 @@
     <None Include="Resources\chain_wheel_tire2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\DataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\DataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-      <LastGenOutput>DataModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Models\ModelDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <LastGenOutput>ModelDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

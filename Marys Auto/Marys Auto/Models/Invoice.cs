@@ -14,11 +14,14 @@ namespace Marys_Auto.Models
     
     public partial class Invoice
     {
-        public string Invoice_ID { get; set; }
+        public int Invoice_ID { get; set; }
+        public System.DateTime Date { get; set; }
+        public int Vehicle_ID { get; set; }
+        public int Employee_ID { get; set; }
+        public decimal EstimatePrice { get; set; }
         public Nullable<decimal> FinalPrice { get; set; }
-        public string WorkDoneDescription { get; set; }
-        public string Service_ID { get; set; }
     
-        public virtual Service Service { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
     }
 }

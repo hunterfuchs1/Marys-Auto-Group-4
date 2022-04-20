@@ -17,17 +17,19 @@ namespace Marys_Auto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Vehicle()
         {
-            this.Customer_Vehicles = new HashSet<Customer_Vehicles>();
+            this.Invoices = new HashSet<Invoice>();
         }
     
-        public string Vehicle_ID { get; set; }
+        public int Vehicle_ID { get; set; }
         public string VehicleMake { get; set; }
         public string VehicleModel { get; set; }
         public string VehicleTrim { get; set; }
         public string VehicleYear { get; set; }
         public string VIN { get; set; }
+        public int Customer_ID { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer_Vehicles> Customer_Vehicles { get; set; }
+        public virtual ICollection<Invoice> Invoices { get; set; }
     }
 }
