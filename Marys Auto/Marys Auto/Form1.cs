@@ -62,7 +62,6 @@ namespace Marys_Auto
             this.customers1.Visible = false;
             this.report1.Visible = false;
         }
-
         private void mainUserInputForm_Load(object sender, EventArgs e)
         {
             

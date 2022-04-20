@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Marys_Auto.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Marys_Auto
         public Customers()
         {
             InitializeComponent();
+        }
+        public void populateData()
+        {
+            CustomerGridView.AutoGenerateColumns = false;
+            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            {
+                CustomerGridView.DataSource = db.Customers.ToList<Customer>();
+            }
+        }
+
+        private void Customers_Load(object sender, EventArgs e)
+        {
+            populateData();
         }
     }
 }

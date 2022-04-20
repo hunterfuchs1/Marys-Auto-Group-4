@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EmployeeGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,18 +44,32 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Employee_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HourlyWage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Experience = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // EmployeeGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 9);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 259);
-            this.dataGridView1.TabIndex = 0;
+            this.EmployeeGridView.AllowUserToDeleteRows = false;
+            this.EmployeeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmployeeGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Employee_ID,
+            this.EmployeeFirstName,
+            this.EmployeeLastName,
+            this.JobTitle,
+            this.HourlyWage,
+            this.Experience});
+            this.EmployeeGridView.Location = new System.Drawing.Point(21, 9);
+            this.EmployeeGridView.Name = "EmployeeGridView";
+            this.EmployeeGridView.RowHeadersWidth = 51;
+            this.EmployeeGridView.RowTemplate.Height = 24;
+            this.EmployeeGridView.Size = new System.Drawing.Size(716, 259);
+            this.EmployeeGridView.TabIndex = 0;
             // 
             // label1
             // 
@@ -180,6 +194,54 @@
             this.textBox6.Size = new System.Drawing.Size(153, 22);
             this.textBox6.TabIndex = 2;
             // 
+            // Employee_ID
+            // 
+            this.Employee_ID.DataPropertyName = "Employee_ID";
+            this.Employee_ID.HeaderText = "Employee ID";
+            this.Employee_ID.MinimumWidth = 6;
+            this.Employee_ID.Name = "Employee_ID";
+            this.Employee_ID.Width = 125;
+            // 
+            // EmployeeFirstName
+            // 
+            this.EmployeeFirstName.DataPropertyName = "EmployeeFirstName";
+            this.EmployeeFirstName.HeaderText = "First Name";
+            this.EmployeeFirstName.MinimumWidth = 6;
+            this.EmployeeFirstName.Name = "EmployeeFirstName";
+            this.EmployeeFirstName.Width = 125;
+            // 
+            // EmployeeLastName
+            // 
+            this.EmployeeLastName.DataPropertyName = "EmployeeLastName";
+            this.EmployeeLastName.HeaderText = "Last Name";
+            this.EmployeeLastName.MinimumWidth = 6;
+            this.EmployeeLastName.Name = "EmployeeLastName";
+            this.EmployeeLastName.Width = 125;
+            // 
+            // JobTitle
+            // 
+            this.JobTitle.DataPropertyName = "JobTitle";
+            this.JobTitle.HeaderText = "Job Title";
+            this.JobTitle.MinimumWidth = 6;
+            this.JobTitle.Name = "JobTitle";
+            this.JobTitle.Width = 125;
+            // 
+            // HourlyWage
+            // 
+            this.HourlyWage.DataPropertyName = "HourlyWage";
+            this.HourlyWage.HeaderText = "Hourly Wage";
+            this.HourlyWage.MinimumWidth = 6;
+            this.HourlyWage.Name = "HourlyWage";
+            this.HourlyWage.Width = 125;
+            // 
+            // Experience
+            // 
+            this.Experience.DataPropertyName = "Experience";
+            this.Experience.HeaderText = "Experience";
+            this.Experience.MinimumWidth = 6;
+            this.Experience.Name = "Experience";
+            this.Experience.Width = 125;
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,10 +261,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.EmployeeGridView);
             this.Name = "Employees";
             this.Size = new System.Drawing.Size(752, 524);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Employees_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +273,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView EmployeeGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -226,5 +289,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HourlyWage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Experience;
     }
 }

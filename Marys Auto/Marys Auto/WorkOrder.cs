@@ -19,11 +19,9 @@ namespace Marys_Auto
         }
         public void populateData()
         {
-           // workOrdergridView.AutoGenerateColumns = false;
+            workOrdergridView.AutoGenerateColumns = false;
             using (MarysAutoDBEntities db = new MarysAutoDBEntities())
             {
-                //var workOrder = db.Customers.SqlQuery("Select ")
-               // workOrdergridView.DataSource = new BindingSource();
                 workOrdergridView.DataSource =  db.Invoices.ToList<Invoice>();
             }
         }

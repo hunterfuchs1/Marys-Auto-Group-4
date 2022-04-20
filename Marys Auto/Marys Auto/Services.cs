@@ -126,7 +126,10 @@ namespace Marys_Auto
             vehicle.Vehicle_ID = 0;
             vehicle.VehicleMake = makeBox.SelectedItem.ToString();
             vehicle.VehicleModel = modelBox.SelectedItem.ToString();
-            vehicle.VehicleTrim = trimBox.SelectedItem.ToString();
+            if (trimBox.SelectedItem == null)
+                vehicle.VehicleTrim = "";
+            else 
+                vehicle.VehicleTrim = trimBox.SelectedItem.ToString();
             vehicle.VehicleYear = yearBox.SelectedItem.ToString();
             vehicle.VIN = vinBox.Text;
             vehicle.Customer_ID = customer.Customer_ID;
