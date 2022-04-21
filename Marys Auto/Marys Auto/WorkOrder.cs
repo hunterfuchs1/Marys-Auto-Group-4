@@ -1,4 +1,4 @@
-﻿using Marys_Auto.Models;
+﻿using Marys_Auto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,19 +17,19 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
-        public void populateData()
-        {
-            workOrdergridView.AutoGenerateColumns = false;
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            {
-                workOrdergridView.DataSource =  db.Invoices.ToList<Invoice>();
-            }
-        }
+        //public void populateData()
+        //{
+        //    workOrdergridView.AutoGenerateColumns = false;
+        //    using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+        //    {
+        //        workOrdergridView.DataSource =  db.Invoices.ToList<Invoice>();
+        //    }
+        //}
 
         private void WorkOrder_Load(object sender, EventArgs e)
         {
             
-            populateData();
+            //populateData();
         }
 
         private void workOrdergridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -39,16 +39,16 @@ namespace Marys_Auto
 
         private void workOrdergridView_DoubleClick(object sender, EventArgs e)
         {
-            if(workOrdergridView.CurrentRow.Index != -1)
-            {
-                Invoice invoice = new Invoice();
-                invoice.Invoice_ID = Convert.ToInt32(workOrdergridView.CurrentRow.Cells["Invoice_ID"].Value);
-                using(MarysAutoDBEntities db = new MarysAutoDBEntities())
-                {
-                    invoice = db.Invoices.Where(x => x.Invoice_ID == invoice.Invoice_ID).FirstOrDefault();
-                    estimatedPriceBox.Text = invoice.EstimatePrice.ToString();
-                }
-            }
+            //if(workOrdergridView.CurrentRow.Index != -1)
+            //{
+            //    //Invoice invoice = new Invoice();
+            //    //invoice.Invoice_ID = Convert.ToInt32(workOrdergridView.CurrentRow.Cells["Invoice_ID"].Value);
+            //    //using(MarysAutoDBEntities db = new MarysAutoDBEntities())
+            //    //{
+            //    //    invoice = db.Invoices.Where(x => x.Invoice_ID == invoice.Invoice_ID).FirstOrDefault();
+            //    //    estimatedPriceBox.Text = invoice.EstimatePrice.ToString();
+            //    //}
+            //}
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -62,6 +62,14 @@ namespace Marys_Auto
             //                     select x.Invoice_ID;
             //    finalPrice.
             //}
+        }
+
+        private void invoiceBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.invoiceBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.marysAutoDataSet);
+
         }
     }
 }

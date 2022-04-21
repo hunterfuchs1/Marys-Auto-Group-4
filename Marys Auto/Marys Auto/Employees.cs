@@ -1,4 +1,4 @@
-﻿using Marys_Auto.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,19 +17,27 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
-        public void populateData()
-        {
-            EmployeeGridView.AutoGenerateColumns = false;
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            {
-                EmployeeGridView.DataSource = db.Employees.ToList<Employee>();
+        //public void populateData()
+        //{
+        //    EmployeeGridView.AutoGenerateColumns = false;
+        //    using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+        //    {
+        //        this.EmployeeGridView.DataSource = db.Employees.ToList<Employee>();
                 
-            }
-        }
+        //    }
+        //}
 
         private void Employees_Load(object sender, EventArgs e)
         {
-            populateData();
+            //populateData();
+
+        }
+
+        private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employeesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.marysAutoDataSet);
 
         }
     }

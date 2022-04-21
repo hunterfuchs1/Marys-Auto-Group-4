@@ -1,9 +1,9 @@
-﻿
-using Marys_Auto.Models;
+﻿using Marys_Auto.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -71,7 +71,10 @@ namespace Marys_Auto
             //}
             //clear();
             //MessageBox.Show("Customer Added", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            //SqlConnection sqlConnection = new SqlConnection();
+            //sqlConnection.Open();
+            //string query = @"INSERT INTO Customers(Customer_ID, CustomerFirstName, CustomerLastName, CustomerStreetAddress, CustomerCity,CustomerState,CustomerZipCode,CustomerPhoneAreaCode, CustomerPhoneNumber)Values('"+firstNameBox.Text +"');
+            //SqlCommand sqlCommand = new SqlCommand();)
 
 
 
@@ -116,24 +119,33 @@ namespace Marys_Auto
             customer.CustomerZipCode = txtZip.Text.Trim();
             customer.CustomerPhoneAreaCode = txtArea.Text.Trim();
             customer.CustomerPhoneNumber = phoneNumberBox.Text.Trim();
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            using (MarysAuto_DBEntities db = new MarysAuto_DBEntities())
             {
                 db.Customers.Add(customer);
+                
                 db.SaveChanges();
             }
+            //using(SqlConnection conn = new SqlConnection())
+            //{
+            //    conn.Open();
+            //    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Customers", conn);
+            //    DataTable data = new DataTable();
+            //    dataAdapter.Fill(data);
+                
 
+            //}
             Vehicle vehicle = new Vehicle();
             vehicle.Vehicle_ID = 0;
             vehicle.VehicleMake = makeBox.SelectedItem.ToString();
             vehicle.VehicleModel = modelBox.SelectedItem.ToString();
             if (trimBox.SelectedItem == null)
                 vehicle.VehicleTrim = "";
-            else 
+            else
                 vehicle.VehicleTrim = trimBox.SelectedItem.ToString();
             vehicle.VehicleYear = yearBox.SelectedItem.ToString();
             vehicle.VIN = vinBox.Text;
             vehicle.Customer_ID = customer.Customer_ID;
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            using (MarysAuto_DBEntities db = new MarysAuto_DBEntities())
             {
                 db.Vehicles.Add(vehicle);
                 db.SaveChanges();
@@ -164,7 +176,7 @@ namespace Marys_Auto
                 employee.Experience = 5;
             else if (employee.EmployeeFirstName == "Wendy")
                 employee.Experience = 2;
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            using (MarysAuto_DBEntities db = new MarysAuto_DBEntities())
             {
                 db.Employees.Add(employee);
                 db.SaveChanges();
@@ -178,7 +190,7 @@ namespace Marys_Auto
             invoice.Employee_ID = employee.Employee_ID;
             invoice.EstimatePrice = decimal.Parse(estimatedPriceBox.Text);
             invoice.FinalPrice = decimal.Parse(actualPriceBox.Text);
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            using (MarysAuto_DBEntities db = new MarysAuto_DBEntities())
             {
                 db.Invoices.Add(invoice);
                 db.SaveChanges();
@@ -188,7 +200,7 @@ namespace Marys_Auto
             service.Invoice_ID = 0;
             service.ServiceName = ServicesBox.SelectedItem.ToString();
             service.Invoice_ID = invoice.Invoice_ID;
-            using (MarysAutoDBEntities db = new MarysAutoDBEntities())
+            using (MarysAuto_DBEntities db = new MarysAuto_DBEntities())
             {
                 db.Services.Add(service);
                 db.SaveChanges();
