@@ -21,46 +21,51 @@ namespace Marys_Auto
         private void btnServices_Click(object sender, EventArgs e)
         {
             this.services1.Visible = true;
-            this.employees1.Visible = false;
             this.customers1.Visible = false;
             this.report1.Visible = false;
             this.workOrder1.Visible = false;
+            this.employees1.Visible = false;
+
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             this.services1.Visible = false;
-            this.employees1.Visible = true;
             this.customers1.Visible = false;
             this.report1.Visible = false;
             this.workOrder1.Visible = false;
+            this.employees1.Visible = true;
+            employees1.loadEmployeeData();
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             this.services1.Visible = false;
-            this.employees1.Visible = false;
             this.customers1.Visible = true;
             this.report1.Visible = false;
             this.workOrder1.Visible = false;
+            this.employees1.Visible = false;
+            customers1.loadCustomerData();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             this.services1.Visible = false;
-            this.employees1.Visible = false;
             this.customers1.Visible = false;
-            this.workOrder1.Visible = false;
             this.report1.Visible = true;
+            this.workOrder1.Visible = false;
+            this.employees1.Visible = false;
+            
         }
 
         private void btnWorkOrder_Click(object sender, EventArgs e)
         {
-            this.workOrder1.Visible = true;
             this.services1.Visible = false;
-            this.employees1.Visible = false;
             this.customers1.Visible = false;
             this.report1.Visible = false;
+            this.workOrder1.Visible = true;
+            this.employees1.Visible = false;
+            workOrder1.loadWOData();
         }
         private void mainUserInputForm_Load(object sender, EventArgs e)
         {

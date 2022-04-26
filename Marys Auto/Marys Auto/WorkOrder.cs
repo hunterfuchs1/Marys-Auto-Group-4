@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
+        string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         //public void populateData()
         //{
         //    workOrdergridView.AutoGenerateColumns = false;
@@ -28,8 +30,22 @@ namespace Marys_Auto
 
         private void WorkOrder_Load(object sender, EventArgs e)
         {
-            
+
             //populateData();
+            loadWOData();
+            
+        }
+        public void loadWOData()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Invoice";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataSet table = new DataSet();
+                adapter.Fill(table, "Invoice");
+                invoiceDataGridView.DataSource = table.Tables["Invoice"].DefaultView;
+            }
         }
 
         private void workOrdergridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -64,12 +80,5 @@ namespace Marys_Auto
             //}
         }
 
-        private void invoiceBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.invoiceBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.marysAutoDataSet);
-
-        }
     }
 }

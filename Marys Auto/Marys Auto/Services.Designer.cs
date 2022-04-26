@@ -46,26 +46,26 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.customerInfoBox = new System.Windows.Forms.GroupBox();
+            this.txtZip = new System.Windows.Forms.TextBox();
+            this.txtArea = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.phoneNumberBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.stateBox = new System.Windows.Forms.TextBox();
             this.streetAdressBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cityBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.stateBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cityBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.ServicesBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.TechnicianBox = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtZip = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtArea = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.customerInfoBox.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             // actualPriceBox
             // 
             this.actualPriceBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.actualPriceBox.Location = new System.Drawing.Point(312, 414);
+            this.actualPriceBox.Location = new System.Drawing.Point(354, 419);
             this.actualPriceBox.Name = "actualPriceBox";
             this.actualPriceBox.Size = new System.Drawing.Size(84, 22);
             this.actualPriceBox.TabIndex = 23;
@@ -83,7 +83,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(191, 417);
+            this.label6.Location = new System.Drawing.Point(233, 422);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
             this.label6.TabIndex = 24;
@@ -92,7 +92,7 @@
             // estimatedPriceBox
             // 
             this.estimatedPriceBox.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.estimatedPriceBox.Location = new System.Drawing.Point(312, 383);
+            this.estimatedPriceBox.Location = new System.Drawing.Point(354, 388);
             this.estimatedPriceBox.Name = "estimatedPriceBox";
             this.estimatedPriceBox.Size = new System.Drawing.Size(84, 22);
             this.estimatedPriceBox.TabIndex = 22;
@@ -102,7 +102,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(191, 383);
+            this.label15.Location = new System.Drawing.Point(233, 388);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(101, 16);
             this.label15.TabIndex = 17;
@@ -110,7 +110,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(312, 457);
+            this.submitButton.Location = new System.Drawing.Point(354, 462);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(123, 40);
             this.submitButton.TabIndex = 26;
@@ -120,7 +120,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(175, 457);
+            this.clearButton.Location = new System.Drawing.Point(217, 462);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(125, 40);
             this.clearButton.TabIndex = 25;
@@ -140,7 +140,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(310, 16);
+            this.groupBox1.Location = new System.Drawing.Point(352, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(256, 217);
             this.groupBox1.TabIndex = 20;
@@ -339,12 +339,35 @@
             this.customerInfoBox.Controls.Add(this.cityBox);
             this.customerInfoBox.Controls.Add(this.label4);
             this.customerInfoBox.Controls.Add(this.label5);
-            this.customerInfoBox.Location = new System.Drawing.Point(25, 16);
+            this.customerInfoBox.Location = new System.Drawing.Point(67, 21);
             this.customerInfoBox.Name = "customerInfoBox";
             this.customerInfoBox.Size = new System.Drawing.Size(256, 279);
             this.customerInfoBox.TabIndex = 18;
             this.customerInfoBox.TabStop = false;
             this.customerInfoBox.Text = "Customer Info";
+            // 
+            // txtZip
+            // 
+            this.txtZip.Location = new System.Drawing.Point(135, 174);
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(107, 22);
+            this.txtZip.TabIndex = 5;
+            // 
+            // txtArea
+            // 
+            this.txtArea.Location = new System.Drawing.Point(135, 202);
+            this.txtArea.Name = "txtArea";
+            this.txtArea.Size = new System.Drawing.Size(107, 22);
+            this.txtArea.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(24, 205);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 16);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "Area Code";
             // 
             // phoneNumberBox
             // 
@@ -362,19 +385,21 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Phone Number";
             // 
-            // stateBox
-            // 
-            this.stateBox.Location = new System.Drawing.Point(135, 143);
-            this.stateBox.Name = "stateBox";
-            this.stateBox.Size = new System.Drawing.Size(107, 22);
-            this.stateBox.TabIndex = 4;
-            // 
             // streetAdressBox
             // 
             this.streetAdressBox.Location = new System.Drawing.Point(135, 83);
             this.streetAdressBox.Name = "streetAdressBox";
             this.streetAdressBox.Size = new System.Drawing.Size(107, 22);
             this.streetAdressBox.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(24, 177);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 16);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Zip";
             // 
             // lastNameBox
             // 
@@ -392,13 +417,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Street Adress";
             // 
-            // cityBox
-            // 
-            this.cityBox.Location = new System.Drawing.Point(135, 111);
-            this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(107, 22);
-            this.cityBox.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -408,14 +426,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Last Name";
             // 
-            // label5
+            // stateBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 143);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "State";
+            this.stateBox.Location = new System.Drawing.Point(135, 143);
+            this.stateBox.Name = "stateBox";
+            this.stateBox.Size = new System.Drawing.Size(107, 22);
+            this.stateBox.TabIndex = 4;
             // 
             // firstNameBox
             // 
@@ -433,6 +449,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
+            // cityBox
+            // 
+            this.cityBox.Location = new System.Drawing.Point(135, 111);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.Size = new System.Drawing.Size(107, 22);
+            this.cityBox.TabIndex = 3;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -441,6 +464,15 @@
             this.label4.Size = new System.Drawing.Size(29, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "City";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "State";
             // 
             // ServicesBox
             // 
@@ -453,7 +485,7 @@
             "Air Conditioning Service",
             "Electrical Systems Service",
             "Transmission Repair"});
-            this.ServicesBox.Location = new System.Drawing.Point(194, 339);
+            this.ServicesBox.Location = new System.Drawing.Point(236, 344);
             this.ServicesBox.Name = "ServicesBox";
             this.ServicesBox.Size = new System.Drawing.Size(254, 24);
             this.ServicesBox.TabIndex = 11;
@@ -461,7 +493,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(84, 342);
+            this.label13.Location = new System.Drawing.Point(126, 347);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 16);
             this.label13.TabIndex = 27;
@@ -470,7 +502,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(84, 312);
+            this.label14.Location = new System.Drawing.Point(126, 317);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(73, 16);
             this.label14.TabIndex = 27;
@@ -484,42 +516,10 @@
             "Tina Massey",
             "Brad Peterson",
             "Wendy Myers"});
-            this.TechnicianBox.Location = new System.Drawing.Point(194, 309);
+            this.TechnicianBox.Location = new System.Drawing.Point(236, 314);
             this.TechnicianBox.Name = "TechnicianBox";
             this.TechnicianBox.Size = new System.Drawing.Size(254, 24);
             this.TechnicianBox.TabIndex = 10;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 177);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(26, 16);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "Zip";
-            // 
-            // txtZip
-            // 
-            this.txtZip.Location = new System.Drawing.Point(135, 174);
-            this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(107, 22);
-            this.txtZip.TabIndex = 5;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(24, 205);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 16);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "Area Code";
-            // 
-            // txtArea
-            // 
-            this.txtArea.Location = new System.Drawing.Point(135, 202);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(107, 22);
-            this.txtArea.TabIndex = 6;
             // 
             // Services
             // 
@@ -538,7 +538,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.customerInfoBox);
             this.Name = "Services";
-            this.Size = new System.Drawing.Size(637, 518);
+            this.Size = new System.Drawing.Size(707, 537);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.customerInfoBox.ResumeLayout(false);
