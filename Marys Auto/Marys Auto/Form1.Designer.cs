@@ -37,10 +37,10 @@ namespace Marys_Auto
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnServices = new System.Windows.Forms.Button();
             this.btnEmployees = new System.Windows.Forms.Button();
-            this.workOrder1 = new Marys_Auto.WorkOrder();
-            this.report1 = new Marys_Auto.Report();
             this.customers1 = new Marys_Auto.Customers();
+            this.report1 = new Marys_Auto.Report();
             this.employees1 = new Marys_Auto.Employees();
+            this.workOrder1 = new Marys_Auto.WorkOrder();
             this.services1 = new Marys_Auto.Services();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,7 +54,7 @@ namespace Marys_Auto
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1116, 62);
+            this.panel1.Size = new System.Drawing.Size(1008, 62);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -81,7 +81,7 @@ namespace Marys_Auto
             this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(259, 530);
+            this.panel2.Size = new System.Drawing.Size(259, 574);
             this.panel2.TabIndex = 1;
             // 
             // btnWorkOrder
@@ -92,7 +92,7 @@ namespace Marys_Auto
             this.btnWorkOrder.Image = global::Marys_Auto.Properties.Resources.icons8_briefcase_60;
             this.btnWorkOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnWorkOrder.Location = new System.Drawing.Point(0, 130);
-            this.btnWorkOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWorkOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnWorkOrder.Name = "btnWorkOrder";
             this.btnWorkOrder.Size = new System.Drawing.Size(259, 89);
             this.btnWorkOrder.TabIndex = 4;
@@ -172,62 +172,57 @@ namespace Marys_Auto
             this.btnEmployees.UseVisualStyleBackColor = false;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
-            // workOrder1
+            // customers1
             // 
-            this.workOrder1.AutoSize = true;
-            this.workOrder1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.workOrder1.Location = new System.Drawing.Point(259, 1634);
-            this.workOrder1.Margin = new System.Windows.Forms.Padding(5);
-            this.workOrder1.Name = "workOrder1";
-            this.workOrder1.Size = new System.Drawing.Size(857, 518);
-            this.workOrder1.TabIndex = 6;
+            this.customers1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customers1.Location = new System.Drawing.Point(259, 62);
+            this.customers1.Name = "customers1";
+            this.customers1.Size = new System.Drawing.Size(749, 574);
+            this.customers1.TabIndex = 3;
             // 
             // report1
             // 
-            this.report1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.report1.Location = new System.Drawing.Point(259, 1110);
-            this.report1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.report1.Location = new System.Drawing.Point(259, 62);
             this.report1.Name = "report1";
-            this.report1.Size = new System.Drawing.Size(857, 524);
-            this.report1.TabIndex = 5;
-            // 
-            // customers1
-            // 
-            this.customers1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customers1.Location = new System.Drawing.Point(259, 586);
-            this.customers1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.customers1.Name = "customers1";
-            this.customers1.Size = new System.Drawing.Size(857, 524);
-            this.customers1.TabIndex = 4;
+            this.report1.Size = new System.Drawing.Size(749, 574);
+            this.report1.TabIndex = 2;
             // 
             // employees1
             // 
-            this.employees1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.employees1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employees1.Location = new System.Drawing.Point(259, 62);
-            this.employees1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employees1.Name = "employees1";
-            this.employees1.Size = new System.Drawing.Size(857, 524);
-            this.employees1.TabIndex = 3;
+            this.employees1.Size = new System.Drawing.Size(749, 574);
+            this.employees1.TabIndex = 4;
+            // 
+            // workOrder1
+            // 
+            this.workOrder1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workOrder1.Location = new System.Drawing.Point(259, 62);
+            this.workOrder1.Margin = new System.Windows.Forms.Padding(4);
+            this.workOrder1.Name = "workOrder1";
+            this.workOrder1.Size = new System.Drawing.Size(749, 574);
+            this.workOrder1.TabIndex = 5;
             // 
             // services1
             // 
             this.services1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.services1.Location = new System.Drawing.Point(259, 62);
-            this.services1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.services1.Name = "services1";
-            this.services1.Size = new System.Drawing.Size(857, 530);
-            this.services1.TabIndex = 2;
+            this.services1.Size = new System.Drawing.Size(749, 574);
+            this.services1.TabIndex = 6;
             // 
             // mainUserInputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 592);
-            this.Controls.Add(this.workOrder1);
-            this.Controls.Add(this.report1);
-            this.Controls.Add(this.customers1);
-            this.Controls.Add(this.employees1);
+            this.ClientSize = new System.Drawing.Size(1008, 636);
             this.Controls.Add(this.services1);
+            this.Controls.Add(this.workOrder1);
+            this.Controls.Add(this.employees1);
+            this.Controls.Add(this.customers1);
+            this.Controls.Add(this.report1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -237,7 +232,6 @@ namespace Marys_Auto
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -249,13 +243,13 @@ namespace Marys_Auto
         private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnServices;
-        private Services services1;
-        private Employees employees1;
-        private Customers customers1;
-        private Report report1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnWorkOrder;
+        private Report report1;
+        private Customers customers1;
+        private Employees employees1;
         private WorkOrder workOrder1;
+        private Services services1;
     }
 }
 

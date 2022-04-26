@@ -1,8 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,28 +17,23 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
-        //public void populateData()
-        //{
-        //    EmployeeGridView.AutoGenerateColumns = false;
-        //    using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-        //    {
-        //        this.EmployeeGridView.DataSource = db.Employees.ToList<Employee>();
-                
-        //    }
-        //}
+        string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         private void Employees_Load(object sender, EventArgs e)
         {
-            //populateData();
-
+            loadEmployeeData();
         }
-
-        private void employeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        public void loadEmployeeData()
         {
-            this.Validate();
-            this.employeesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.marysAutoDataSet);
-
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM Employees";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataSet table = new DataSet();
+                adapter.Fill(table, "Employees");
+                dtgvEmployee.DataSource = table.Tables["Employees"].DefaultView;
+            }
         }
     }
 }
