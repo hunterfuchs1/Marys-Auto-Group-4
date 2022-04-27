@@ -18,7 +18,7 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
-        //string connn = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
         string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private void submitButton_Click(object sender, EventArgs e)
         {
@@ -55,27 +55,7 @@ namespace Marys_Auto
             //                ///EVERYTHING VALIDATED NEW CODE HERE///
             //                ////////////////////////////////////////
             //                MessageBox.Show("Validated");
-            //Customer customer = new Customer();
-            //customer.Customer_ID = 0;
-            //customer.CustomerFirstName = firstNameBox.Text.Trim();
-            //customer.CustomerLastName = lastNameBox.Text.Trim();
-            //customer.CustomerStreetAddress = streetAdressBox.Text.Trim();
-            //customer.CustomerCity = cityBox.Text.Trim();
-            //customer.CustomerState = stateBox.Text.Trim();
-            //customer.CustomerZipCode = txtZip.Text.Trim();
-            //customer.CustomerPhoneAreaCode = txtArea.Text.Trim();
-            //customer.CustomerPhoneNumber = phoneNumberBox.Text.Trim();
-            //using (MarysAutoShopDBEntities db = new MarysAutoShopDBEntities())
-            //{
-            //    db.Customers.Add(customer);
-            //    db.SaveChanges();
-            //}
-            //clear();
-            //MessageBox.Show("Customer Added", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //SqlConnection sqlConnection = new SqlConnection();
-            //sqlConnection.Open();
-            //string query = @"INSERT INTO Customers(Customer_ID, CustomerFirstName, CustomerLastName, CustomerStreetAddress, CustomerCity,CustomerState,CustomerZipCode,CustomerPhoneAreaCode, CustomerPhoneNumber)Values('"+firstNameBox.Text +"');
-            //SqlCommand sqlCommand = new SqlCommand();)
+            
 
 
             InsertServiceData();
@@ -110,133 +90,59 @@ namespace Marys_Auto
             //{
             //    MessageBox.Show(ex.GetType() + " : " + ex.Message);
             //}
-            /////////////////
-            //Customer customer = new Customer();
-            //customer.Customer_ID = 0;
-            //customer.CustomerFirstName = firstNameBox.Text.Trim();
-            //customer.CustomerLastName = lastNameBox.Text.Trim();
-            //customer.CustomerStreetAddress = streetAdressBox.Text.Trim();
-            //customer.CustomerCity = cityBox.Text.Trim();
-            //customer.CustomerState = stateBox.Text.Trim();
-            //customer.CustomerZipCode = txtZip.Text.Trim();
-            //customer.CustomerPhoneAreaCode = txtArea.Text.Trim();
-            //customer.CustomerPhoneNumber = phoneNumberBox.Text.Trim();
-            //using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //{
-            //    db.Customers.Add(customer);
-                
-            //    db.SaveChanges();
-            //}
-            //////////
-            //using(SqlConnection conn = new SqlConnection())
-            //{
-            //    conn.Open();
-            //    SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * from Customers", conn);
-            //    DataTable data = new DataTable();
-            //    dataAdapter.Fill(data);
-                
-
-            //}
-            //Vehicle vehicle = new Vehicle();
-            //vehicle.Vehicle_ID = 0;
-            //vehicle.VehicleMake = makeBox.SelectedItem.ToString();
-            //vehicle.VehicleModel = modelBox.SelectedItem.ToString();
-            //if (trimBox.SelectedItem == null)
-            //    vehicle.VehicleTrim = "";
-            //else
-            //    vehicle.VehicleTrim = trimBox.SelectedItem.ToString();
-            //vehicle.VehicleYear = yearBox.SelectedItem.ToString();
-            //vehicle.VIN = vinBox.Text;
-            //vehicle.Customer_ID = customer.Customer_ID;
-            //using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //{
-            //    db.Vehicles.Add(vehicle);
-            //    db.SaveChanges();
-            //}
-
-            //Employee employee = new Employee();
-            //employee.Employee_ID = 0;
-            //string[] delim = TechnicianBox.SelectedItem.ToString().Split(' ');
-            //employee.EmployeeFirstName = delim[0].Trim();
-            //employee.EmployeeLastName = delim[1].Trim();
-            //if (employee.EmployeeFirstName == "Tina")
-            //    employee.JobTitle = "Master Mechanic";
-            //else if (employee.EmployeeFirstName == "Brad")
-            //    employee.JobTitle = "Automotive Technician";
-            //else if (employee.EmployeeFirstName == "Wendy")
-            //    employee.JobTitle = "Tire/Lube Technician";
-            //else
-            //    employee.JobTitle = "Boss";
-            //if (employee.EmployeeFirstName == "Tina")
-            //    employee.HourlyWage = 80.00m;
-            //else if (employee.EmployeeFirstName == "Brad")
-            //    employee.HourlyWage = 50.00m;
-            //else if (employee.EmployeeFirstName == "Wendy")
-            //    employee.HourlyWage = 30.00m;
-            //if (employee.EmployeeFirstName == "Tina")
-            //    employee.Experience = 10;
-            //else if (employee.EmployeeFirstName == "Brad")
-            //    employee.Experience = 5;
-            //else if (employee.EmployeeFirstName == "Wendy")
-            //    employee.Experience = 2;
-            //using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //{
-            //    db.Employees.Add(employee);
-            //    db.SaveChanges();
-            //}
-
-            //Invoice invoice = new Invoice();
-            //invoice.Invoice_ID = 0;
-            //DateTime todaysDate = DateTime.Today;
-            //invoice.Date = todaysDate;
-            //invoice.Vehicle_ID = vehicle.Vehicle_ID;
-            //invoice.Employee_ID = employee.Employee_ID;
-            //invoice.EstimatePrice = decimal.Parse(estimatedPriceBox.Text);
-            //invoice.FinalPrice = decimal.Parse(actualPriceBox.Text);
-            //using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //{
-            //    db.Invoices.Add(invoice);
-            //    db.SaveChanges();
-            //}
-
-            //Service service = new Service();
-            //service.Invoice_ID = 0;
-            //service.ServiceName = ServicesBox.SelectedItem.ToString();
-            //service.Invoice_ID = invoice.Invoice_ID;
-            //using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //{
-            //    db.Services.Add(service);
-            //    db.SaveChanges();
-            //}
-
-
-
+           
             
         }
         public void InsertServiceData()
         {
-            // insert customer data
+            
+            int customerId = 0;
+            int employeeId = 0;
+            int invoiceId = 0;
+            int vehicleId = 0;
+            //insert into Customers table
             using (SqlConnection con = new SqlConnection(connectionString))
             {
+                
+                string query;
                 con.Open();
-                string query = "INSERT INTO Customers VALUES ('" + firstNameBox.Text + "','" +
-                    lastNameBox.Text + "','" + streetAdressBox.Text + "','" + cityBox.Text + "', '" +
-                    stateBox.Text + "','" + txtZip.Text + "','" + txtArea.Text + "','" + phoneNumberBox.Text + "')";
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
+                query = "INSERT INTO Customers(CustomerFirstName,CustomerLastName,CustomerStreetAddress,CustomerCity,CustomerState,CustomerZipCode,CustomerPhoneAreaCode,CustomerPhoneNumber) VALUES(@CustomerFirstName,@CustomerLastName,@CustomerStreetAddress,@CustomerCity,@CustomerState,@CustomerZipCode,@CustomerPhoneAreaCode,@CustomerPhoneNumber) SELECT SCOPE_IDENTITY();";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@CustomerFirstName", firstNameBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerLastName", lastNameBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerStreetAddress", streetAdressBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerCity", cityBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerState", stateBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerZipCode", txtZip.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerPhoneAreaCode", txtArea.Text));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerPhoneNumber", phoneNumberBox.Text));
+                    cmd.ExecuteNonQuery();
+                    customerId = Convert.ToInt32(cmd.ExecuteScalar());
+                }
                 con.Close();
-            }
-             //insert vehicle data
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
+                query = "INSERT INTO Vehicles(VehicleMake,VehicleModel,VehicleTrim,VehicleYear,VIN,Customer_ID) VALUES(@VehicleMake,@VehicleModel,@VehicleTrim,@VehicleYear,@VIN,@Customer_ID) SELECT SCOPE_IDENTITY();";
                 con.Open();
-                string query = "INSERT INTO Vehicles(VehicleMake,VehicleModel,VehicleTrim,VehicleYear,VIN,Customer_ID) VALUES('" + makeBox.SelectedIndex + "','" +
-                    modelBox.SelectedIndex + "','" + trimBox.SelectedIndex + "','" + vinBox.Text + "', '" +
-                    yearBox.SelectedIndex + "," + "@Customer_ID" + "')" + "SELECT SCOPE_IDENTITY()";
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.Add(new SqlParameter( "@VehicleMake", makeBox.SelectedItem.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@VehicleModel", modelBox.SelectedItem.ToString()));
+                    if (trimBox.SelectedItem == null)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@VehicleTrim", ""));
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@VehicleTrim", trimBox.SelectedItem.ToString()));
+                    }
+                    
+                    cmd.Parameters.Add(new SqlParameter("@VehicleYear", yearBox.SelectedItem.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@VIN", vinBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@Customer_ID", customerId.ToString()));
+                    cmd.ExecuteNonQuery();
+                    vehicleId = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                    
                 con.Close();
             }
 
@@ -272,35 +178,56 @@ namespace Marys_Auto
                     wage = 0;
                     experience = 0;
                 }
-                string query = "INSERT INTO Employees VALUES ('" + fname + "','" +
-                    lname + "','" + title + "','" + wage + "', '" +
-                    experience + "')";
+                string query = "INSERT INTO Employees(EmployeeFirstName,EmployeeLastName,JobTitle,HourlyWage,Experience) VALUES (@EmployeeFirstName,@EmployeeLastName,@JobTitle,@HourlyWage,@Experience)  SELECT SCOPE_IDENTITY();";
 
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeFirstName", fname));
+                    cmd.Parameters.Add(new SqlParameter("@EmployeeLastName", lname));
+                    cmd.Parameters.Add(new SqlParameter("@JobTitle", title));
+                    cmd.Parameters.Add(new SqlParameter("@HourlyWage", wage));
+                    cmd.Parameters.Add(new SqlParameter("@Experience", experience));
+
+                    cmd.ExecuteNonQuery();
+                    employeeId = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                    
                 con.Close();
             }
            
-            
+            //insert into Invoice table
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "INSERT INTO Invoice(Date,Vehicle_ID,Employee_ID,EstimatePrice,FinalPrice) VALUES ('" + new DateTime() + "','" +
-                   "@Vehicle_ID" + "','" + "@Employee_ID" + "','" + estimatedPriceBox.Text + "','" + actualPriceBox.Text + "')" + "SELECT SCOPE_IDENTITY()";
+                string query = "INSERT INTO Invoice(Date,Vehicle_ID,Employee_ID,EstimatePrice,FinalPrice) VALUES (@Date,@Vehicle_ID,@Employee_ID,@EstimatePrice,@FinalPrice)  SELECT SCOPE_IDENTITY();";
 
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    DateTime myDateTime = DateTime.Now;
+                    cmd.Parameters.Add(new SqlParameter("@Date", myDateTime));
+                    cmd.Parameters.Add(new SqlParameter("@Vehicle_ID", vehicleId));
+                    cmd.Parameters.Add(new SqlParameter("@Employee_ID", employeeId));
+                    cmd.Parameters.Add(new SqlParameter("@EstimatePrice", estimatedPriceBox.Text));
+                    cmd.Parameters.Add(new SqlParameter("@FinalPrice", actualPriceBox.Text));
+                    cmd.ExecuteNonQuery();
+                    invoiceId = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+                    
                 con.Close();
             }
 
+            //insert into Services table
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "INSERT INTO Services(ServiceName, Invoice_ID) VALUES ('" + ServicesBox.SelectedIndex + "','" +
-                   "@Invoice_ID" + "')" + "SELECT SCOPE_IDENTITY()";
-
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
+                string query = "INSERT INTO Services(ServiceName, Invoice_ID) VALUES (@ServiceName,@Invoice_ID)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@ServiceName", ServicesBox.SelectedItem.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@Invoice_ID", invoiceId));
+                    cmd.ExecuteNonQuery();
+                }
                 con.Close();
             }
 
