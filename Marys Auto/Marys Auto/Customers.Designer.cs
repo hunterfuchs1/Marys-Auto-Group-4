@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.customersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customersDataSet = new Marys_Auto.CustomersDataSet();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCusFname = new System.Windows.Forms.TextBox();
@@ -59,119 +47,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCusState = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.customersTableAdapter = new Marys_Auto.CustomersDataSetTableAdapters.CustomersTableAdapter();
+            this.customersDataGridView = new System.Windows.Forms.DataGridView();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoicesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehiclesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // customersDataGridView
-            // 
-            this.customersDataGridView.AutoGenerateColumns = false;
-            this.customersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.customersDataGridView.DataSource = this.customersBindingSource;
-            this.customersDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
-            this.customersDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.customersDataGridView.Name = "customersDataGridView";
-            this.customersDataGridView.RowHeadersWidth = 51;
-            this.customersDataGridView.RowTemplate.Height = 24;
-            this.customersDataGridView.Size = new System.Drawing.Size(707, 253);
-            this.customersDataGridView.TabIndex = 22;
-            this.customersDataGridView.DoubleClick += new System.EventHandler(this.customersDataGridView_DoubleClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Customer_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Customer_ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "CustomerFirstName";
-            this.dataGridViewTextBoxColumn10.HeaderText = "First Name";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "CustomerLastName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Last Name";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "CustomerStreetAddress";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "CustomerCity";
-            this.dataGridViewTextBoxColumn13.HeaderText = "City";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "CustomerState";
-            this.dataGridViewTextBoxColumn14.HeaderText = "State";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "CustomerZipCode";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Zip Code";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "CustomerPhoneAreaCode";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Area Code";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "CustomerPhoneNumber";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Phone Number";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 125;
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "Customers";
-            this.customersBindingSource.DataSource = this.customersDataSet;
-            // 
-            // customersDataSet
-            // 
-            this.customersDataSet.DataSetName = "CustomersDataSet";
-            this.customersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSave
             // 
@@ -320,14 +211,130 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // customersTableAdapter
+            // customersDataGridView
             // 
-            this.customersTableAdapter.ClearBeforeFill = true;
+            this.customersDataGridView.AutoGenerateColumns = false;
+            this.customersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CustomerID,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.invoicesDataGridViewTextBoxColumn,
+            this.vehiclesDataGridViewTextBoxColumn});
+            this.customersDataGridView.DataSource = this.customerBindingSource;
+            this.customersDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.customersDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.customersDataGridView.Name = "customersDataGridView";
+            this.customersDataGridView.RowHeadersWidth = 51;
+            this.customersDataGridView.RowTemplate.Height = 24;
+            this.customersDataGridView.Size = new System.Drawing.Size(707, 277);
+            this.customersDataGridView.TabIndex = 27;
+            this.customersDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.customersDataGridView_DataError);
+            this.customersDataGridView.DoubleClick += new System.EventHandler(this.customersDataGridView_DoubleClick_1);
+            // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "Customer_ID";
+            this.CustomerID.HeaderText = "Customer_ID";
+            this.CustomerID.MinimumWidth = 6;
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "CustomerFirstName";
+            this.dataGridViewTextBoxColumn10.HeaderText = "CustomerFirstName";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "CustomerLastName";
+            this.dataGridViewTextBoxColumn11.HeaderText = "CustomerLastName";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "CustomerStreetAddress";
+            this.dataGridViewTextBoxColumn12.HeaderText = "CustomerStreetAddress";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "CustomerCity";
+            this.dataGridViewTextBoxColumn13.HeaderText = "CustomerCity";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "CustomerState";
+            this.dataGridViewTextBoxColumn14.HeaderText = "CustomerState";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "CustomerZipCode";
+            this.dataGridViewTextBoxColumn15.HeaderText = "CustomerZipCode";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "CustomerPhoneAreaCode";
+            this.dataGridViewTextBoxColumn16.HeaderText = "CustomerPhoneAreaCode";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "CustomerPhoneNumber";
+            this.dataGridViewTextBoxColumn17.HeaderText = "CustomerPhoneNumber";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 125;
+            // 
+            // invoicesDataGridViewTextBoxColumn
+            // 
+            this.invoicesDataGridViewTextBoxColumn.DataPropertyName = "Invoices";
+            this.invoicesDataGridViewTextBoxColumn.HeaderText = "Invoices";
+            this.invoicesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.invoicesDataGridViewTextBoxColumn.Name = "invoicesDataGridViewTextBoxColumn";
+            this.invoicesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vehiclesDataGridViewTextBoxColumn
+            // 
+            this.vehiclesDataGridViewTextBoxColumn.DataPropertyName = "Vehicles";
+            this.vehiclesDataGridViewTextBoxColumn.HeaderText = "Vehicles";
+            this.vehiclesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vehiclesDataGridViewTextBoxColumn.Name = "vehiclesDataGridViewTextBoxColumn";
+            this.vehiclesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Marys_Auto.Models.Customer);
             // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCusPhone);
             this.Controls.Add(this.txtCusAreaCode);
@@ -346,13 +353,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.customersDataGridView);
             this.Name = "Customers";
             this.Size = new System.Drawing.Size(707, 537);
             this.Load += new System.EventHandler(this.Customers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn customerZipCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneAreaCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView customersDataGridView;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCusFname;
@@ -396,7 +400,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView customersDataGridView;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
@@ -405,9 +411,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.BindingSource customersBindingSource;
-        private CustomersDataSet customersDataSet;
-        private CustomersDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoicesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vehiclesDataGridViewTextBoxColumn;
         //private CustomersDataSet customersDataSet;
         //private CustomersDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
         //private CustomersDataSetTableAdapters.TableAdapterManager tableAdapterManager;

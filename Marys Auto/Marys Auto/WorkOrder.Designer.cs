@@ -33,19 +33,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnWOupdate = new System.Windows.Forms.Button();
             this.invoiceDataGridView = new System.Windows.Forms.DataGridView();
-            this.invoiceWODataSet = new Marys_Auto.InvoiceWODataSet();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceWODataSet = new Marys_Auto.InvoiceWODataSet();
             this.invoiceTableAdapter = new Marys_Auto.InvoiceWODataSetTableAdapters.InvoiceTableAdapter();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnWOcancel = new System.Windows.Forms.Button();
+            this.InvoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnWOcancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceWODataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceWODataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // actualPriceBox
@@ -84,7 +84,7 @@
             this.invoiceDataGridView.AutoGenerateColumns = false;
             this.invoiceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.invoiceDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
+            this.InvoiceID,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
@@ -98,29 +98,42 @@
             this.invoiceDataGridView.RowTemplate.Height = 24;
             this.invoiceDataGridView.Size = new System.Drawing.Size(701, 374);
             this.invoiceDataGridView.TabIndex = 35;
-            // 
-            // invoiceWODataSet
-            // 
-            this.invoiceWODataSet.DataSetName = "InvoiceWODataSet";
-            this.invoiceWODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.invoiceDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.invoiceDataGridView_DataError);
+            this.invoiceDataGridView.DoubleClick += new System.EventHandler(this.invoiceDataGridView_DoubleClick);
             // 
             // invoiceBindingSource
             // 
             this.invoiceBindingSource.DataMember = "Invoice";
             this.invoiceBindingSource.DataSource = this.invoiceWODataSet;
             // 
+            // invoiceWODataSet
+            // 
+            this.invoiceWODataSet.DataSetName = "InvoiceWODataSet";
+            this.invoiceWODataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // invoiceTableAdapter
             // 
             this.invoiceTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // btnWOcancel
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Invoice_ID";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Invoice_ID";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 125;
+            this.btnWOcancel.Location = new System.Drawing.Point(342, 470);
+            this.btnWOcancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWOcancel.Name = "btnWOcancel";
+            this.btnWOcancel.Size = new System.Drawing.Size(123, 42);
+            this.btnWOcancel.TabIndex = 34;
+            this.btnWOcancel.Text = "Cancel";
+            this.btnWOcancel.UseVisualStyleBackColor = true;
+            this.btnWOcancel.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // InvoiceID
+            // 
+            this.InvoiceID.DataPropertyName = "Invoice_ID";
+            this.InvoiceID.HeaderText = "Invoice_ID";
+            this.InvoiceID.MinimumWidth = 6;
+            this.InvoiceID.Name = "InvoiceID";
+            this.InvoiceID.ReadOnly = true;
+            this.InvoiceID.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -162,17 +175,6 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 125;
             // 
-            // btnWOcancel
-            // 
-            this.btnWOcancel.Location = new System.Drawing.Point(342, 470);
-            this.btnWOcancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnWOcancel.Name = "btnWOcancel";
-            this.btnWOcancel.Size = new System.Drawing.Size(123, 42);
-            this.btnWOcancel.TabIndex = 34;
-            this.btnWOcancel.Text = "Cancel";
-            this.btnWOcancel.UseVisualStyleBackColor = true;
-            this.btnWOcancel.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // WorkOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,8 +189,8 @@
             this.Size = new System.Drawing.Size(701, 537);
             this.Load += new System.EventHandler(this.WorkOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceWODataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceWODataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,15 +214,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.BindingSource invoiceBindingSource;
+        private InvoiceWODataSet invoiceWODataSet;
+        private InvoiceWODataSetTableAdapters.InvoiceTableAdapter invoiceTableAdapter;
+        private System.Windows.Forms.Button btnWOcancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvoiceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.BindingSource invoiceBindingSource;
-        private InvoiceWODataSet invoiceWODataSet;
-        private InvoiceWODataSetTableAdapters.InvoiceTableAdapter invoiceTableAdapter;
-        private System.Windows.Forms.Button btnWOcancel;
     }
 }
