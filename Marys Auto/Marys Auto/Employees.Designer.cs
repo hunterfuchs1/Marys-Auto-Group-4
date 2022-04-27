@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtgvEmployee = new System.Windows.Forms.DataGridView();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesDataSet = new Marys_Auto.EmployeesDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEFname = new System.Windows.Forms.TextBox();
             this.btnEcancel = new System.Windows.Forms.Button();
@@ -42,18 +44,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtEexperience = new System.Windows.Forms.TextBox();
             this.btnEupdate = new System.Windows.Forms.Button();
-            this.employeesDataSet = new Marys_Auto.EmployeesDataSet();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new Marys_Auto.EmployeesDataSetTableAdapters.EmployeesTableAdapter();
-            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hourlyWageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgvEmployee
@@ -61,7 +61,7 @@
             this.dtgvEmployee.AutoGenerateColumns = false;
             this.dtgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.employeeIDDataGridViewTextBoxColumn,
+            this.EmployeeID,
             this.employeeFirstNameDataGridViewTextBoxColumn,
             this.employeeLastNameDataGridViewTextBoxColumn,
             this.jobTitleDataGridViewTextBoxColumn,
@@ -75,6 +75,18 @@
             this.dtgvEmployee.RowTemplate.Height = 24;
             this.dtgvEmployee.Size = new System.Drawing.Size(707, 306);
             this.dtgvEmployee.TabIndex = 0;
+            this.dtgvEmployee.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgvEmployee_DataError);
+            this.dtgvEmployee.DoubleClick += new System.EventHandler(this.dtgvEmployee_DoubleClick);
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.employeesDataSet;
+            // 
+            // employeesDataSet
+            // 
+            this.employeesDataSet.DataSetName = "EmployeesDataSet";
+            this.employeesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -173,30 +185,21 @@
             this.btnEupdate.TabIndex = 3;
             this.btnEupdate.Text = "Update";
             this.btnEupdate.UseVisualStyleBackColor = true;
-            // 
-            // employeesDataSet
-            // 
-            this.employeesDataSet.DataSetName = "EmployeesDataSet";
-            this.employeesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataMember = "Employees";
-            this.employeesBindingSource.DataSource = this.employeesDataSet;
+            this.btnEupdate.Click += new System.EventHandler(this.btnEupdate_Click);
             // 
             // employeesTableAdapter
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
             // 
-            // employeeIDDataGridViewTextBoxColumn
+            // EmployeeID
             // 
-            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "Employee_ID";
-            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "Employee_ID";
-            this.employeeIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employeeIDDataGridViewTextBoxColumn.Visible = false;
-            this.employeeIDDataGridViewTextBoxColumn.Width = 125;
+            this.EmployeeID.DataPropertyName = "Employee_ID";
+            this.EmployeeID.HeaderText = "Employee_ID";
+            this.EmployeeID.MinimumWidth = 6;
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            this.EmployeeID.Visible = false;
+            this.EmployeeID.Width = 125;
             // 
             // employeeFirstNameDataGridViewTextBoxColumn
             // 
@@ -259,8 +262,8 @@
             this.Size = new System.Drawing.Size(707, 537);
             this.Load += new System.EventHandler(this.Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,12 +272,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgvEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFirstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeLastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobTitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hourlyWageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn experienceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource employeesBindingSource;
         private EmployeesDataSet employeesDataSet;
         private System.Windows.Forms.Label label1;
@@ -290,5 +287,11 @@
         private System.Windows.Forms.TextBox txtEexperience;
         private System.Windows.Forms.Button btnEupdate;
         private EmployeesDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jobTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hourlyWageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn experienceDataGridViewTextBoxColumn;
     }
 }

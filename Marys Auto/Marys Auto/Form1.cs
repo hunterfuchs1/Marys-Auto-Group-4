@@ -35,7 +35,8 @@ namespace Marys_Auto
             this.report1.Visible = false;
             this.workOrder1.Visible = false;
             this.employees1.Visible = true;
-            employees1.loadEmployeeData();
+            //employees1.loadEmployeeData();
+            employees1.populateEmployeeData();
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -45,7 +46,8 @@ namespace Marys_Auto
             this.report1.Visible = false;
             this.workOrder1.Visible = false;
             this.employees1.Visible = false;
-            customers1.loadCustomerData();
+            //customers1.loadCustomerData();
+            customers1.populateCustomerData();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -65,7 +67,8 @@ namespace Marys_Auto
             this.report1.Visible = false;
             this.workOrder1.Visible = true;
             this.employees1.Visible = false;
-            workOrder1.loadWOData();
+            //workOrder1.loadWOData();
+            workOrder1.populateWOData();
         }
         private void mainUserInputForm_Load(object sender, EventArgs e)
         {
