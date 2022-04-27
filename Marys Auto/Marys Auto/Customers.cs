@@ -21,16 +21,7 @@ namespace Marys_Auto
             //populateCustomerData();
         }
         string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        //public void populateCustomerData()
-        //{
-        //    customersDataGridView.AutoGenerateColumns = false;
-        //   // using (MarysAutoDBEntities db = new MarysAutoDBEntities())
-        //    {
-        //       // customersDataGridView.DataSource = db.Customers.ToList<Customer>();
-
-        //    }
-        //}
-        // Customer customer = new Customer();
+        
         private void Customers_Load(object sender, EventArgs e)
         {
             //populateCustomerData();
@@ -128,24 +119,6 @@ namespace Marys_Auto
             
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-           // if(MessageBox.Show("Are you sure you want to delete?","Record Deletion",MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
-            //    using(MarysAutoDBEntities db = new MarysAutoDBEntities())
-            //    {
-            //        var entry = db.Entry(customer);
-            //        if(entry.State == EntityState.Detached)
-            //        {
-            //            db.Customers.Attach(customer);
-            //            db.Customers.Remove(customer);
-            //            db.SaveChanges();
-            //            populateCustomerData();
-            //            Clear();
-            //            MessageBox.Show("Deleted Successfully");
-            //        }
-            //    }
-            //}
-        }
+
     }
 }
