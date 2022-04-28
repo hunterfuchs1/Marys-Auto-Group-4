@@ -112,7 +112,7 @@ namespace Marys_Auto
             this.btnReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(0, 0, 29, 0);
-            this.btnReport.Size = new System.Drawing.Size(259, 89);
+            this.btnReport.Size = new System.Drawing.Size(265, 89);
             this.btnReport.TabIndex = 3;
             this.btnReport.Text = "Report";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

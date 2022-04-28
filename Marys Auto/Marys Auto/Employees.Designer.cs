@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvEmployee = new System.Windows.Forms.DataGridView();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hourlyWageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesDataSet = new Marys_Auto.EmployeesDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,12 +52,6 @@
             this.txtEexperience = new System.Windows.Forms.TextBox();
             this.btnEupdate = new System.Windows.Forms.Button();
             this.employeesTableAdapter = new Marys_Auto.EmployeesDataSetTableAdapters.EmployeesTableAdapter();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hourlyWageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataSet)).BeginInit();
@@ -59,6 +60,7 @@
             // dtgvEmployee
             // 
             this.dtgvEmployee.AutoGenerateColumns = false;
+            this.dtgvEmployee.BackgroundColor = System.Drawing.Color.PaleTurquoise;
             this.dtgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeID,
@@ -68,6 +70,14 @@
             this.hourlyWageDataGridViewTextBoxColumn,
             this.experienceDataGridViewTextBoxColumn});
             this.dtgvEmployee.DataSource = this.employeesBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvEmployee.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvEmployee.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtgvEmployee.Location = new System.Drawing.Point(0, 0);
             this.dtgvEmployee.Name = "dtgvEmployee";
@@ -77,6 +87,56 @@
             this.dtgvEmployee.TabIndex = 0;
             this.dtgvEmployee.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgvEmployee_DataError);
             this.dtgvEmployee.DoubleClick += new System.EventHandler(this.dtgvEmployee_DoubleClick);
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.DataPropertyName = "Employee_ID";
+            this.EmployeeID.HeaderText = "Employee_ID";
+            this.EmployeeID.MinimumWidth = 6;
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            this.EmployeeID.Visible = false;
+            this.EmployeeID.Width = 125;
+            // 
+            // employeeFirstNameDataGridViewTextBoxColumn
+            // 
+            this.employeeFirstNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeFirstName";
+            this.employeeFirstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.employeeFirstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employeeFirstNameDataGridViewTextBoxColumn.Name = "employeeFirstNameDataGridViewTextBoxColumn";
+            this.employeeFirstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // employeeLastNameDataGridViewTextBoxColumn
+            // 
+            this.employeeLastNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeLastName";
+            this.employeeLastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.employeeLastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employeeLastNameDataGridViewTextBoxColumn.Name = "employeeLastNameDataGridViewTextBoxColumn";
+            this.employeeLastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // jobTitleDataGridViewTextBoxColumn
+            // 
+            this.jobTitleDataGridViewTextBoxColumn.DataPropertyName = "JobTitle";
+            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "JobTitle";
+            this.jobTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.jobTitleDataGridViewTextBoxColumn.Name = "jobTitleDataGridViewTextBoxColumn";
+            this.jobTitleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hourlyWageDataGridViewTextBoxColumn
+            // 
+            this.hourlyWageDataGridViewTextBoxColumn.DataPropertyName = "HourlyWage";
+            this.hourlyWageDataGridViewTextBoxColumn.HeaderText = "Hourly Wage";
+            this.hourlyWageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hourlyWageDataGridViewTextBoxColumn.Name = "hourlyWageDataGridViewTextBoxColumn";
+            this.hourlyWageDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // experienceDataGridViewTextBoxColumn
+            // 
+            this.experienceDataGridViewTextBoxColumn.DataPropertyName = "Experience";
+            this.experienceDataGridViewTextBoxColumn.HeaderText = "Experience";
+            this.experienceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.experienceDataGridViewTextBoxColumn.Name = "experienceDataGridViewTextBoxColumn";
+            this.experienceDataGridViewTextBoxColumn.Width = 125;
             // 
             // employeesBindingSource
             // 
@@ -106,12 +166,17 @@
             // 
             // btnEcancel
             // 
+            this.btnEcancel.BackColor = System.Drawing.Color.Violet;
+            this.btnEcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEcancel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnEcancel.Location = new System.Drawing.Point(477, 450);
             this.btnEcancel.Name = "btnEcancel";
-            this.btnEcancel.Size = new System.Drawing.Size(100, 47);
+            this.btnEcancel.Size = new System.Drawing.Size(122, 51);
             this.btnEcancel.TabIndex = 3;
-            this.btnEcancel.Text = "Cancel";
-            this.btnEcancel.UseVisualStyleBackColor = true;
+            this.btnEcancel.Text = "CANCEL";
+            this.btnEcancel.UseVisualStyleBackColor = false;
+            this.btnEcancel.Click += new System.EventHandler(this.btnEcancel_Click);
             // 
             // label2
             // 
@@ -179,72 +244,27 @@
             // 
             // btnEupdate
             // 
-            this.btnEupdate.Location = new System.Drawing.Point(477, 383);
+            this.btnEupdate.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnEupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEupdate.ForeColor = System.Drawing.Color.White;
+            this.btnEupdate.Location = new System.Drawing.Point(477, 378);
             this.btnEupdate.Name = "btnEupdate";
-            this.btnEupdate.Size = new System.Drawing.Size(100, 46);
+            this.btnEupdate.Size = new System.Drawing.Size(122, 51);
             this.btnEupdate.TabIndex = 3;
-            this.btnEupdate.Text = "Update";
-            this.btnEupdate.UseVisualStyleBackColor = true;
+            this.btnEupdate.Text = "UPDATE";
+            this.btnEupdate.UseVisualStyleBackColor = false;
             this.btnEupdate.Click += new System.EventHandler(this.btnEupdate_Click);
             // 
             // employeesTableAdapter
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
             // 
-            // EmployeeID
-            // 
-            this.EmployeeID.DataPropertyName = "Employee_ID";
-            this.EmployeeID.HeaderText = "Employee_ID";
-            this.EmployeeID.MinimumWidth = 6;
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.ReadOnly = true;
-            this.EmployeeID.Visible = false;
-            this.EmployeeID.Width = 125;
-            // 
-            // employeeFirstNameDataGridViewTextBoxColumn
-            // 
-            this.employeeFirstNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeFirstName";
-            this.employeeFirstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.employeeFirstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeFirstNameDataGridViewTextBoxColumn.Name = "employeeFirstNameDataGridViewTextBoxColumn";
-            this.employeeFirstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // employeeLastNameDataGridViewTextBoxColumn
-            // 
-            this.employeeLastNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeLastName";
-            this.employeeLastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.employeeLastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeLastNameDataGridViewTextBoxColumn.Name = "employeeLastNameDataGridViewTextBoxColumn";
-            this.employeeLastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // jobTitleDataGridViewTextBoxColumn
-            // 
-            this.jobTitleDataGridViewTextBoxColumn.DataPropertyName = "JobTitle";
-            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "JobTitle";
-            this.jobTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.jobTitleDataGridViewTextBoxColumn.Name = "jobTitleDataGridViewTextBoxColumn";
-            this.jobTitleDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hourlyWageDataGridViewTextBoxColumn
-            // 
-            this.hourlyWageDataGridViewTextBoxColumn.DataPropertyName = "HourlyWage";
-            this.hourlyWageDataGridViewTextBoxColumn.HeaderText = "Hourly Wage";
-            this.hourlyWageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hourlyWageDataGridViewTextBoxColumn.Name = "hourlyWageDataGridViewTextBoxColumn";
-            this.hourlyWageDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // experienceDataGridViewTextBoxColumn
-            // 
-            this.experienceDataGridViewTextBoxColumn.DataPropertyName = "Experience";
-            this.experienceDataGridViewTextBoxColumn.HeaderText = "Experience";
-            this.experienceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.experienceDataGridViewTextBoxColumn.Name = "experienceDataGridViewTextBoxColumn";
-            this.experienceDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Controls.Add(this.btnEupdate);
             this.Controls.Add(this.btnEcancel);
             this.Controls.Add(this.txtEexperience);
@@ -258,6 +278,7 @@
             this.Controls.Add(this.txtEFname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvEmployee);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Employees";
             this.Size = new System.Drawing.Size(707, 537);
             this.Load += new System.EventHandler(this.Employees_Load);

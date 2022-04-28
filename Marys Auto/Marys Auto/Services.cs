@@ -19,224 +19,77 @@ namespace Marys_Auto
             InitializeComponent();
         }
         
-       // string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+       
         private void submitButton_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    ///Customer Info Null Check
-            //    if (String.IsNullOrEmpty(firstNameBox.Text) || String.IsNullOrEmpty(lastNameBox.Text) || String.IsNullOrEmpty(cityBox.Text) || String.IsNullOrEmpty(stateBox.Text) || String.IsNullOrEmpty(streetAdressBox.Text) || String.IsNullOrEmpty(phoneNumberBox.Text))
-            //    {
-            //        MessageBox.Show("One or more of the boxes were left blank in the Customer Info section. Please fill out every box.", "Customer Info Null");
-            //    }
+            try
+            {
+                ///Customer Info Null Check
+                if (String.IsNullOrEmpty(firstNameBox.Text) || String.IsNullOrEmpty(lastNameBox.Text) || String.IsNullOrEmpty(cityBox.Text) || String.IsNullOrEmpty(stateBox.Text) || String.IsNullOrEmpty(streetAdressBox.Text) || String.IsNullOrEmpty(phoneNumberBox.Text))
+                {
+                    MessageBox.Show("One or more of the boxes were left blank in the Customer Info section. Please fill out every box.", "Customer Info Null");
+                }
 
-            //   /// Phone Number Check
-            //    if (int.TryParse(phoneNumberBox.Text, out int num))
-            //    {
-            //        if (phoneNumberBox.Text.Length == 10)
-            //        {
-            //            //Vehicle Info Null Check
-            //            if (String.IsNullOrEmpty(makeBox.Text) || String.IsNullOrEmpty(modelBox.Text) || String.IsNullOrEmpty(trimBox.Text) || String.IsNullOrEmpty(trimBox.Text) || String.IsNullOrEmpty(vinBox.Text) || String.IsNullOrEmpty(yearBox.Text))
-            //            {
-            //                MessageBox.Show("One or more of the boxes were left blank in the Vehicle Info section. Please fill out every box.", "Vehicle Info Null");
-            //            }
-            //            //Issue Text Box Null Check
-            //            else if (String.IsNullOrEmpty(ServicesBox.Text))
-            //            {
-            //                MessageBox.Show("You have to specify an issue with the vehicle.", "Issue Text Box Null");
-            //            }
-            //            else if (String.IsNullOrEmpty(estimatedPriceBox.Text) || String.IsNullOrEmpty(actualPriceBox.Text))
-            //            {
-            //                MessageBox.Show("The Estimated Price or Actual Price is empty.", "Price Info Null");
-            //            }
-            //            else
-            //            {
-            //                ////////////////////////////////////////
-            //                ///EVERYTHING VALIDATED NEW CODE HERE///
-            //                ////////////////////////////////////////
-            //                MessageBox.Show("Validated");
-
-
-
-            //InsertServiceData();
-            InsertServiceData();
+                /// Phone Number Check
+                if (int.TryParse(phoneNumberBox.Text, out int num))
+                {
+                    if (phoneNumberBox.Text.Length == 10)
+                    {
+                        //Vehicle Info Null Check
+                        if (String.IsNullOrEmpty(makeBox.Text) || String.IsNullOrEmpty(modelBox.Text) || String.IsNullOrEmpty(trimBox.Text) || String.IsNullOrEmpty(trimBox.Text) || String.IsNullOrEmpty(vinBox.Text) || String.IsNullOrEmpty(yearBox.Text))
+                        {
+                            MessageBox.Show("One or more of the boxes were left blank in the Vehicle Info section. Please fill out every box.", "Vehicle Info Null");
+                        }
+                        //Issue Text Box Null Check
+                        else if (String.IsNullOrEmpty(ServicesBox.Text))
+                        {
+                            MessageBox.Show("You have to specify an issue with the vehicle.", "Issue Text Box Null");
+                        }
+                        else if (String.IsNullOrEmpty(estimatedPriceBox.Text) || String.IsNullOrEmpty(actualPriceBox.Text))
+                        {
+                            MessageBox.Show("The Estimated Price or Actual Price is empty.", "Price Info Null");
+                        }
+                        else
+                        {
+                            //////////////////////////////////////////
+                            /////EVERYTHING VALIDATED NEW CODE HERE///
+                            //////////////////////////////////////////
+                            
+                            InsertServiceData();
 
 
 
-            //            }
-            //        }
-            //       // If phone number isnt 10 digits long
-            //        else
-            //        {
-            //            MessageBox.Show("That was an invalid phone number. Make sure you type out only numbers with nothing else. It should be 10 digits long.", "Phone Number Error");
-            //        }
-            //    }
-            //   // If phone number has non ints in it
-            //    else
-            //    {
-            //        MessageBox.Show("That was an invalid phone number. Make sure you type out only numbers with nothing else. It should be 10 digits long.", "Phone Number Error");
-            //    }
+                        }
+                    }
+                    // If phone number isnt 10 digits long
+                    else
+                    {
+                        MessageBox.Show("That was an invalid phone number. Make sure you type out only numbers with nothing else. It should be 10 digits long.", "Phone Number Error");
+                    }
+                }
+                // If phone number has non ints in it
+                else
+                {
+                    MessageBox.Show("That was an invalid phone number. Make sure you type out only numbers with nothing else. It should be 10 digits long.", "Phone Number Error");
+                }
 
-            //}
-            //catch (FormatException)
-            //{
-            //    MessageBox.Show("Your value was in an incorrect format. Please enter only number a number");
-            //}
-            //catch (OverflowException)
-            //{
-            //    MessageBox.Show("That amount was too much. Please enter another amount.");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.GetType() + " : " + ex.Message);
-            //}
-           
-            
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Your value was in an incorrect format. Please enter only number a number");
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("That amount was too much. Please enter another amount.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.GetType() + " : " + ex.Message);
+            }
+
+
         }
-        //////////////////////////////////////////////////////DO NOT DELETE - Working Function///////////////////////////////////////////////////////////////////
-        //public void InsertServiceData()
-        //{
-
-        //    int customerId = 0;
-        //    int employeeId = 0;
-        //    int invoiceId = 0;
-        //    int vehicleId = 0;
-        //    //insert into Customers table
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-
-        //        string query;
-        //        con.Open();
-        //        query = "INSERT INTO Customers(CustomerFirstName,CustomerLastName,CustomerStreetAddress,CustomerCity,CustomerState,CustomerZipCode,CustomerPhoneAreaCode,CustomerPhoneNumber) VALUES(@CustomerFirstName,@CustomerLastName,@CustomerStreetAddress,@CustomerCity,@CustomerState,@CustomerZipCode,@CustomerPhoneAreaCode,@CustomerPhoneNumber) SELECT SCOPE_IDENTITY();";
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerFirstName", firstNameBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerLastName", lastNameBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerStreetAddress", streetAdressBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerCity", cityBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerState", stateBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerZipCode", txtZip.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerPhoneAreaCode", txtArea.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@CustomerPhoneNumber", phoneNumberBox.Text));
-        //            cmd.ExecuteNonQuery();
-        //            customerId = Convert.ToInt32(cmd.ExecuteScalar());
-        //        }
-        //        con.Close();
-        //        query = "INSERT INTO Vehicles(VehicleMake,VehicleModel,VehicleTrim,VehicleYear,VIN,Customer_ID) VALUES(@VehicleMake,@VehicleModel,@VehicleTrim,@VehicleYear,@VIN,@Customer_ID) SELECT SCOPE_IDENTITY();";
-        //        con.Open();
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.Add(new SqlParameter( "@VehicleMake", makeBox.SelectedItem.ToString()));
-        //            cmd.Parameters.Add(new SqlParameter("@VehicleModel", modelBox.SelectedItem.ToString()));
-        //            if (trimBox.SelectedItem == null)
-        //            {
-        //                cmd.Parameters.Add(new SqlParameter("@VehicleTrim", ""));
-        //            }
-        //            else
-        //            {
-        //                cmd.Parameters.Add(new SqlParameter("@VehicleTrim", trimBox.SelectedItem.ToString()));
-        //            }
-
-        //            cmd.Parameters.Add(new SqlParameter("@VehicleYear", yearBox.SelectedItem.ToString()));
-        //            cmd.Parameters.Add(new SqlParameter("@VIN", vinBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@Customer_ID", customerId.ToString()));
-        //            cmd.ExecuteNonQuery();
-        //            vehicleId = Convert.ToInt32(cmd.ExecuteScalar());
-        //        }
-
-        //        con.Close();
-        //    }
-
-        //    //insert into employees table
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        con.Open();
-        //        string[] delim = TechnicianBox.SelectedItem.ToString().Split(' ');
-        //        string fname = delim[0].Trim();
-        //        string lname = delim[1].Trim();
-        //        string title = "";
-        //        decimal wage = 0;
-        //        int experience = 0;
-        //        if (fname == "Tina")
-        //        {
-        //            title = "Master Mechanic";
-        //            wage = 80.00m;
-        //            experience = 10;
-        //        }else if (fname == "Brad")
-        //        {
-        //            title = "Automotive Technician";
-        //            wage = 50.00m;
-        //            experience = 5;
-        //        }else if(fname == "Wendy")
-        //        {
-        //            title = "Tire/Lube Technician";
-        //            wage = 30.00m;
-        //            experience = 2;
-        //        }
-        //        else
-        //        {
-        //            title = "Owner";
-        //            wage = 0;
-        //            experience = 0;
-        //        }
-        //        string query = "INSERT INTO Employees(EmployeeFirstName,EmployeeLastName,JobTitle,HourlyWage,Experience) VALUES (@EmployeeFirstName,@EmployeeLastName,@JobTitle,@HourlyWage,@Experience)  SELECT SCOPE_IDENTITY();";
-
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-
-        //            cmd.Parameters.Add(new SqlParameter("@EmployeeFirstName", fname));
-        //            cmd.Parameters.Add(new SqlParameter("@EmployeeLastName", lname));
-        //            cmd.Parameters.Add(new SqlParameter("@JobTitle", title));
-        //            cmd.Parameters.Add(new SqlParameter("@HourlyWage", wage));
-        //            cmd.Parameters.Add(new SqlParameter("@Experience", experience));
-
-        //            cmd.ExecuteNonQuery();
-        //            employeeId = Convert.ToInt32(cmd.ExecuteScalar());
-        //        }
-
-        //        con.Close();
-        //    }
-
-        //    //insert into Invoice table
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        con.Open();
-        //        string query = "INSERT INTO Invoice(Date,Vehicle_ID,Employee_ID,EstimatePrice,FinalPrice) VALUES (@Date,@Vehicle_ID,@Employee_ID,@EstimatePrice,@FinalPrice)  SELECT SCOPE_IDENTITY();";
-
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            DateTime myDateTime = DateTime.Now;
-        //            cmd.Parameters.Add(new SqlParameter("@Date", myDateTime));
-        //            cmd.Parameters.Add(new SqlParameter("@Vehicle_ID", vehicleId));
-        //            cmd.Parameters.Add(new SqlParameter("@Employee_ID", employeeId));
-        //            cmd.Parameters.Add(new SqlParameter("@EstimatePrice", estimatedPriceBox.Text));
-        //            cmd.Parameters.Add(new SqlParameter("@FinalPrice", actualPriceBox.Text));
-        //            cmd.ExecuteNonQuery();
-        //            invoiceId = Convert.ToInt32(cmd.ExecuteScalar());
-        //        }
-
-        //        con.Close();
-        //    }
-
-        //    //insert into Services table
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        con.Open();
-        //        string query = "INSERT INTO Services(ServiceName, Invoice_ID) VALUES (@ServiceName,@Invoice_ID)";
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.Add(new SqlParameter("@ServiceName", ServicesBox.SelectedItem.ToString()));
-        //            cmd.Parameters.Add(new SqlParameter("@Invoice_ID", invoiceId));
-        //            cmd.ExecuteNonQuery();
-        //        }
-        //        con.Close();
-        //    }
-
-        //    MessageBox.Show("Data Inserted", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    clear();
-        //}
-        
-        /// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       
         
         public void InsertServiceData()
         {

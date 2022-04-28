@@ -18,11 +18,10 @@ namespace Marys_Auto
         {
             InitializeComponent();
         }
-        //string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
 
         private void Employees_Load(object sender, EventArgs e)
         {
-            //loadEmployeeData();
             populateEmployeeData();
         }
 
@@ -32,7 +31,6 @@ namespace Marys_Auto
             using (MarysAutoDB2Entities db = new MarysAutoDB2Entities())
             {
                 dtgvEmployee.DataSource = db.Employees.ToList<Employee>();
-
             }
         }
         Employee employee = new Employee();
@@ -58,7 +56,7 @@ namespace Marys_Auto
             }
             Clear();
             populateEmployeeData();
-            MessageBox.Show("Successfully updated!");
+            MessageBox.Show("Successfully updated!", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public void Clear()
         {
@@ -93,17 +91,10 @@ namespace Marys_Auto
         {
             e.Cancel = true;
         }
-        //public void loadEmployeeData()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT * FROM Employees";
-        //        SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-        //        DataSet table = new DataSet();
-        //        adapter.Fill(table, "Employees");
-        //        dtgvEmployee.DataSource = table.Tables["Employees"].DefaultView;
-        //    }
-        //}
+
+        private void btnEcancel_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
     }
 }

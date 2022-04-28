@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCusFname = new System.Windows.Forms.TextBox();
@@ -66,18 +67,22 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(535, 376);
+            this.btnSave.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(535, 377);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(92, 37);
+            this.btnSave.Size = new System.Drawing.Size(122, 51);
             this.btnSave.TabIndex = 24;
-            this.btnSave.Text = "Update";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Text = "UPDATE";
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 299);
+            this.label2.Location = new System.Drawing.Point(61, 311);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
             this.label2.TabIndex = 23;
@@ -85,7 +90,7 @@
             // 
             // txtCusFname
             // 
-            this.txtCusFname.Location = new System.Drawing.Point(189, 299);
+            this.txtCusFname.Location = new System.Drawing.Point(189, 311);
             this.txtCusFname.Name = "txtCusFname";
             this.txtCusFname.Size = new System.Drawing.Size(285, 22);
             this.txtCusFname.TabIndex = 25;
@@ -93,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 327);
+            this.label3.Location = new System.Drawing.Point(61, 339);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 23;
@@ -101,7 +106,7 @@
             // 
             // txtCusLname
             // 
-            this.txtCusLname.Location = new System.Drawing.Point(189, 327);
+            this.txtCusLname.Location = new System.Drawing.Point(189, 339);
             this.txtCusLname.Name = "txtCusLname";
             this.txtCusLname.Size = new System.Drawing.Size(285, 22);
             this.txtCusLname.TabIndex = 25;
@@ -109,7 +114,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 355);
+            this.label4.Location = new System.Drawing.Point(61, 367);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 23;
@@ -117,7 +122,7 @@
             // 
             // txtCusAddress
             // 
-            this.txtCusAddress.Location = new System.Drawing.Point(189, 355);
+            this.txtCusAddress.Location = new System.Drawing.Point(189, 367);
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.Size = new System.Drawing.Size(285, 22);
             this.txtCusAddress.TabIndex = 25;
@@ -125,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 383);
+            this.label5.Location = new System.Drawing.Point(61, 395);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 16);
             this.label5.TabIndex = 23;
@@ -133,7 +138,7 @@
             // 
             // txtCusCity
             // 
-            this.txtCusCity.Location = new System.Drawing.Point(189, 383);
+            this.txtCusCity.Location = new System.Drawing.Point(189, 395);
             this.txtCusCity.Name = "txtCusCity";
             this.txtCusCity.Size = new System.Drawing.Size(285, 22);
             this.txtCusCity.TabIndex = 25;
@@ -141,7 +146,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(61, 439);
+            this.label6.Location = new System.Drawing.Point(61, 451);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 16);
             this.label6.TabIndex = 23;
@@ -149,7 +154,7 @@
             // 
             // txtCusZip
             // 
-            this.txtCusZip.Location = new System.Drawing.Point(189, 439);
+            this.txtCusZip.Location = new System.Drawing.Point(189, 451);
             this.txtCusZip.Name = "txtCusZip";
             this.txtCusZip.Size = new System.Drawing.Size(285, 22);
             this.txtCusZip.TabIndex = 25;
@@ -157,7 +162,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(61, 467);
+            this.label7.Location = new System.Drawing.Point(61, 479);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 16);
             this.label7.TabIndex = 23;
@@ -165,7 +170,7 @@
             // 
             // txtCusAreaCode
             // 
-            this.txtCusAreaCode.Location = new System.Drawing.Point(189, 467);
+            this.txtCusAreaCode.Location = new System.Drawing.Point(189, 479);
             this.txtCusAreaCode.Name = "txtCusAreaCode";
             this.txtCusAreaCode.Size = new System.Drawing.Size(285, 22);
             this.txtCusAreaCode.TabIndex = 25;
@@ -173,7 +178,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(61, 495);
+            this.label8.Location = new System.Drawing.Point(61, 507);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 16);
             this.label8.TabIndex = 23;
@@ -181,7 +186,7 @@
             // 
             // txtCusPhone
             // 
-            this.txtCusPhone.Location = new System.Drawing.Point(189, 495);
+            this.txtCusPhone.Location = new System.Drawing.Point(189, 507);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(285, 22);
             this.txtCusPhone.TabIndex = 25;
@@ -189,7 +194,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(61, 411);
+            this.label9.Location = new System.Drawing.Point(61, 423);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 16);
             this.label9.TabIndex = 23;
@@ -197,23 +202,29 @@
             // 
             // txtCusState
             // 
-            this.txtCusState.Location = new System.Drawing.Point(189, 411);
+            this.txtCusState.Location = new System.Drawing.Point(189, 423);
             this.txtCusState.Name = "txtCusState";
             this.txtCusState.Size = new System.Drawing.Size(285, 22);
             this.txtCusState.TabIndex = 25;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(535, 429);
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(535, 441);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(92, 37);
+            this.btnCancel.Size = new System.Drawing.Size(122, 51);
             this.btnCancel.TabIndex = 26;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // customersDataGridView
             // 
             this.customersDataGridView.AutoGenerateColumns = false;
+            this.customersDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.customersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CustomerID,
@@ -228,12 +239,20 @@
             this.invoicesDataGridViewTextBoxColumn,
             this.vehiclesDataGridViewTextBoxColumn});
             this.customersDataGridView.DataSource = this.customerBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.customersDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.customersDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.customersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.customersDataGridView.Name = "customersDataGridView";
             this.customersDataGridView.RowHeadersWidth = 51;
             this.customersDataGridView.RowTemplate.Height = 24;
-            this.customersDataGridView.Size = new System.Drawing.Size(707, 277);
+            this.customersDataGridView.Size = new System.Drawing.Size(707, 305);
             this.customersDataGridView.TabIndex = 27;
             this.customersDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.customersDataGridView_DataError);
             this.customersDataGridView.DoubleClick += new System.EventHandler(this.customersDataGridView_DoubleClick_1);
@@ -316,6 +335,7 @@
             this.invoicesDataGridViewTextBoxColumn.HeaderText = "Invoices";
             this.invoicesDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.invoicesDataGridViewTextBoxColumn.Name = "invoicesDataGridViewTextBoxColumn";
+            this.invoicesDataGridViewTextBoxColumn.Visible = false;
             this.invoicesDataGridViewTextBoxColumn.Width = 125;
             // 
             // vehiclesDataGridViewTextBoxColumn
@@ -324,6 +344,7 @@
             this.vehiclesDataGridViewTextBoxColumn.HeaderText = "Vehicles";
             this.vehiclesDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.vehiclesDataGridViewTextBoxColumn.Name = "vehiclesDataGridViewTextBoxColumn";
+            this.vehiclesDataGridViewTextBoxColumn.Visible = false;
             this.vehiclesDataGridViewTextBoxColumn.Width = 125;
             // 
             // customerBindingSource
@@ -334,6 +355,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Aquamarine;
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtCusPhone);

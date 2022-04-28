@@ -30,5 +30,6 @@ namespace Marys_Auto.Models
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<reportData> reportDatas { get; set; }
     }
 }
