@@ -14,6 +14,7 @@
         <AssociationConnector Association="MarysAutoDB2ModelNameSpace.fk_Customer_Vehicle" ManuallyRouted="false" />
         <AssociationConnector Association="MarysAutoDB2ModelNameSpace.fk_Employee_Invoice" ManuallyRouted="false" />
         <AssociationConnector Association="MarysAutoDB2ModelNameSpace.fk_Service_Invoice" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MarysAutoDB2ModelNameSpace.reportData" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

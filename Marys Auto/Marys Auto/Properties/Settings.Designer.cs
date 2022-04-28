@@ -32,5 +32,15 @@ namespace Marys_Auto.Properties {
                 return ((string)(this["MarysAutoDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=MarysAutoDB2;Integrated Security=True")]
+        public string MarysAutoDB2ConnectionString {
+            get {
+                return ((string)(this["MarysAutoDB2ConnectionString"]));
+            }
+        }
     }
 }

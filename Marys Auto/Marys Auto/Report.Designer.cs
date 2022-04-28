@@ -28,47 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // reportViewer2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(707, 413);
-            this.dataGridView1.TabIndex = 0;
+            reportDataSource1.Name = "dailyReportDataSet";
+            reportDataSource1.Value = this.bindingSource2;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Marys_Auto.Report1.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(-11, 19);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ServerReport.BearerToken = null;
+            this.reportViewer2.Size = new System.Drawing.Size(701, 507);
+            this.reportViewer2.TabIndex = 0;
+            this.reportViewer2.Load += new System.EventHandler(this.reportViewer2_Load);
             // 
-            // button1
+            // bindingSource2
             // 
-            this.button1.Location = new System.Drawing.Point(249, 448);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bindingSource2.DataSource = typeof(Marys_Auto.Models.reportData);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(Marys_Auto.Models.reportData);
             // 
             // Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.reportViewer2);
             this.Name = "Report";
             this.Size = new System.Drawing.Size(707, 537);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGenerateReport;
+        private System.Windows.Forms.BindingSource reportDataBindingSource;
+        //private ReportDataSet ReportDataSet;
+        //private ReportDataSetTableAdapters.reportDataTableAdapter reportDataTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

@@ -18,26 +18,12 @@ namespace Marys_Auto
         public Customers()
         {
             InitializeComponent();
-            //populateCustomerData();
         }
-        //string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        
         
         private void Customers_Load(object sender, EventArgs e)
         {
             populateCustomerData();
-            //string connectionString = "Data Source=Abdalla;Initial Catalog=MarysAutoDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            //using (SqlConnection conn = new SqlConnection(connectionString))
-            //{
-            //    conn.Open();
-            //    string query = "SELECT * FROM Customers";
-            //    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
-            //    DataSet data = new DataSet();
-            //    dataAdapter.Fill(data, "Customers");
-            //    customersDataGridView.DataSource = dataAdapter;
-            //}
-            //loadCustomerData();
-            
-
         }
 
         public void populateCustomerData()
@@ -50,18 +36,6 @@ namespace Marys_Auto
             }
         }
 
-        //public void loadCustomerData()
-        //{
-        //    using (SqlConnection conn = new SqlConnection(connectionString))
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT * FROM Customers";
-        //        SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-        //        DataSet table = new DataSet();
-        //        adapter.Fill(table, "Customers");
-        //        customersDataGridView.DataSource = table.Tables["Customers"].DefaultView;
-        //    }
-        //}
         Customer customer = new Customer();
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -88,7 +62,7 @@ namespace Marys_Auto
             }
             Clear();
             populateCustomerData();
-            MessageBox.Show("Successfully updated!");
+            MessageBox.Show("Successfully updated!", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -103,12 +77,6 @@ namespace Marys_Auto
             txtCusAreaCode.Text = "";
             txtCusPhone.Text = "";
         }
-
-        //private void customersDataGridView_DoubleClick(object sender, EventArgs e)
-        //{
-            
-
-        //}
 
         private void customersDataGridView_DoubleClick_1(object sender, EventArgs e)
         {
@@ -128,14 +96,17 @@ namespace Marys_Auto
                     txtCusPhone.Text = customer.CustomerPhoneNumber;
 
                 }
-
-                btnSave.Text = "Update";
             }
         }
 
         private void customersDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

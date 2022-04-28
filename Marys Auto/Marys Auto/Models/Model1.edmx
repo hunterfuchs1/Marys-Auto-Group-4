@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MarysAutoDB2ModelNameSpace.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MarysAutoDB2ModelNameSpace.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="Customer_ID" />
@@ -60,6 +60,33 @@
           <Property Name="VehicleYear" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="VIN" Type="varchar" MaxLength="17" Nullable="false" />
           <Property Name="Customer_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MarysAutoDB2.dbo.reportData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="reportData">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+            <PropertyRef Name="CustomerFirstName" />
+            <PropertyRef Name="CustomerLastName" />
+            <PropertyRef Name="EmployeeFirstName" />
+            <PropertyRef Name="EmployeeLastName" />
+            <PropertyRef Name="ServiceName" />
+            <PropertyRef Name="VehicleMake" />
+            <PropertyRef Name="VehicleModel" />
+            <PropertyRef Name="VehicleYear" />
+            <PropertyRef Name="EstimatePrice" />
+          </Key>
+          <Property Name="Invoice_ID" Type="int" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeFirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeLastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ServiceName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleModel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleYear" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EstimatePrice" Type="money" Nullable="false" />
+          <Property Name="FinalPrice" Type="money" />
         </EntityType>
         <Association Name="fk_Customer_Invoice">
           <End Role="Customers" Type="Self.Customers" Multiplicity="1">
@@ -123,6 +150,21 @@
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reportData" EntityType="Self.reportData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[reportData].[Invoice_ID] AS [Invoice_ID], 
+[reportData].[CustomerFirstName] AS [CustomerFirstName], 
+[reportData].[CustomerLastName] AS [CustomerLastName], 
+[reportData].[EmployeeFirstName] AS [EmployeeFirstName], 
+[reportData].[EmployeeLastName] AS [EmployeeLastName], 
+[reportData].[ServiceName] AS [ServiceName], 
+[reportData].[VehicleMake] AS [VehicleMake], 
+[reportData].[VehicleModel] AS [VehicleModel], 
+[reportData].[VehicleYear] AS [VehicleYear], 
+[reportData].[EstimatePrice] AS [EstimatePrice], 
+[reportData].[FinalPrice] AS [FinalPrice]
+FROM [dbo].[reportData] AS [reportData]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fk_Customer_Invoice" Association="Self.fk_Customer_Invoice">
             <End Role="Customers" EntitySet="Customers" />
             <End Role="Invoice" EntitySet="Invoice" />
@@ -140,8 +182,7 @@
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MarysAutoDB2ModelNameSpace" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -287,7 +328,33 @@
             <End Role="Services" EntitySet="Services" />
             <End Role="Invoice" EntitySet="Invoices" />
           </AssociationSet>
+          <EntitySet Name="reportDatas" EntityType="MarysAutoDB2ModelNameSpace.reportData" />
         </EntityContainer>
+        <EntityType Name="reportData">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+            <PropertyRef Name="CustomerFirstName" />
+            <PropertyRef Name="CustomerLastName" />
+            <PropertyRef Name="EmployeeFirstName" />
+            <PropertyRef Name="EmployeeLastName" />
+            <PropertyRef Name="ServiceName" />
+            <PropertyRef Name="VehicleMake" />
+            <PropertyRef Name="VehicleModel" />
+            <PropertyRef Name="VehicleYear" />
+            <PropertyRef Name="EstimatePrice" />
+          </Key>
+          <Property Name="Invoice_ID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerLastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeLastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMake" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleModel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleYear" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EstimatePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FinalPrice" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -352,6 +419,23 @@
                 <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
                 <ScalarProperty Name="VIN" ColumnName="VIN" />
                 <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="reportDatas">
+            <EntityTypeMapping TypeName="MarysAutoDB2ModelNameSpace.reportData">
+              <MappingFragment StoreEntitySet="reportData">
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="EstimatePrice" ColumnName="EstimatePrice" />
+                <ScalarProperty Name="VehicleYear" ColumnName="VehicleYear" />
+                <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="EmployeeLastName" ColumnName="EmployeeLastName" />
+                <ScalarProperty Name="EmployeeFirstName" ColumnName="EmployeeFirstName" />
+                <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+                <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
